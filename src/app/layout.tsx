@@ -4,6 +4,12 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
+import Hotjar from "@hotjar/browser";
+
+const siteId = 5046730;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
 
 const inter = Inter({ subsets: ["latin"] });
 
