@@ -4,12 +4,6 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
-import Hotjar from "@hotjar/browser";
-
-const siteId = 5046730;
-const hotjarVersion = 6;
-
-Hotjar.init(siteId, hotjarVersion);
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,6 +29,21 @@ export default function RootLayout({
         <link rel="icon" href="/images/fave.png" />
         <title>Campus Direct | Your Trusted Partner in Education</title>
         <meta name="description" content="Trusted Partner in Education" />
+        {/* Hotjar Tracking Code */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                (function(h,o,t,j,a,r){
+                    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                    h._hjSettings={hjid:5046730,hjsv:6};
+                    a=o.getElementsByTagName('head')[0];
+                    r=o.createElement('script');r.async=1;
+                    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                    a.appendChild(r);
+                })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+              `,
+          }}
+        />
         <Script id="whatsapp-chat-widget" strategy="lazyOnload">
           {`
           var url = '/ChatWidget.js';
