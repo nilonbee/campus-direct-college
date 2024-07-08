@@ -1,5 +1,6 @@
 "use client";
 import { useCourseFilterStore } from "@/store";
+import { rootImagePath } from "@/utils/rootImagePath";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -21,7 +22,9 @@ export const CountryBox: React.FC<CountryBoxProps> = ({
     <div
       className="relative h-[200px] overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-md"
       style={{
-        backgroundImage: img ? `url(${img})` : "none",
+        backgroundImage: img
+          ? `url(${rootImagePath(img)}?tr=w-400)`
+          : "/images/24738.jpg",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

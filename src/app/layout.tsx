@@ -2,7 +2,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -92,7 +91,6 @@ export default function RootLayout({
         />
 
         {/* Google Analytics */}
-        <GoogleAnalytics gaId="G-4S389LVL9G" />
       </head>
       <body className={inter.className}>
         {/* Google Tag Manager (noscript)  */}
