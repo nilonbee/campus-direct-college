@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         <link rel="icon" href="/images/fave.png" />
         <title>Campus Direct | Your Trusted Partner in Education</title>
         <meta name="description" content="Trusted Partner in Education" />
+
         {/* Hotjar Tracking Code */}
         <script
           dangerouslySetInnerHTML={{
@@ -44,6 +46,8 @@ export default function RootLayout({
               `,
           }}
         />
+
+        {/* Whatsapp chat Widget */}
         <Script id="whatsapp-chat-widget" strategy="lazyOnload">
           {`
           var url = '/ChatWidget.js';
@@ -82,10 +86,25 @@ export default function RootLayout({
           x.parentNode.insertBefore(s, x);
         `}
         </Script>
+
+        {/* Google Tag Manager */}
+        <GoogleTagManager gtmId="GTM-M9SGVQTL" />
+
+        {/* Google Analytics */}
+        <GoogleAnalytics gaId="G-4S389LVL9G" />
       </head>
       <body className={inter.className}>
-        <GoogleAnalytics gaId="G-4S389LVL9G" />
-        {/* <ChatWidgetComponent /> */}
+        {/* Google Tag Manager (noscript)  */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M9SGVQTL"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+
+        {/* Notification Toast */}
         <Toaster
           position="top-center"
           reverseOrder={false}
@@ -99,6 +118,8 @@ export default function RootLayout({
           }}
         />
         {children}
+
+        {/* IAS Badge */}
         <Script src="https://www-cdn.icef.com/scripts/iasbadgeid.js" />
       </body>
     </html>
