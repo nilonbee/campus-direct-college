@@ -3,8 +3,54 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Script from "next/script";
+import { GoogleTagManager } from "@next/third-parties/google";
+import { Viewport } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
+  themeColor: "#065DA8",
+};
+
+export const metadata = {
+  title: "Campus Direct | Your Trusted Education Partner",
+  description:
+    "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+  keywords: "study abroad, education consultancy, campus direct",
+  canonical: "https://www.campusdirect.io",
+  url: "https://www.campusdirect.io",
+  openGraph: {
+    title: "Campus Direct | Your Trusted Education Partner",
+    description:
+      "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+    url: "https://www.campusdirect.io",
+    siteName: "Campus Direct",
+    images: [
+      {
+        url: "https://ik.imagekit.io/cdukstore/logo/Logo-Clr.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    handle: "@Campus_DirectUK",
+    site: "@Campus_DirectUK",
+    cardType: "summary_large_image",
+  },
+  robots: "index, follow",
+  author: "Campus Direct",
+  publisher: "Campus Direct",
+  alternate: "https://www.campusdirect.io",
+  viewport,
+};
 
 export default function RootLayout({
   children,
@@ -14,13 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#055da8" />
-        <link rel="icon" href="/images/fave.png" />
-        <title>Campus Direct | Your Trusted Partner in Education</title>
-        <meta name="description" content="Trusted Partner in Education" />
-
+        <link rel="shortcut icon" href="/images/fave.png" />
         {/* Hotjar Tracking Code */}
         <script
           dangerouslySetInnerHTML={{
@@ -77,32 +117,23 @@ export default function RootLayout({
         `}
         </Script>
 
-        {/* Google Tag Manager */}
-        <script
+        {/* <Script
+          id="gtm-script"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-M9SGVQTL');
-              `,
+            `,
           }}
-        />
-
-        {/* Google Analytics */}
+        /> */}
       </head>
-      <body className={inter.className}>
-        {/* Google Tag Manager (noscript)  */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-M9SGVQTL"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
+      <GoogleTagManager gtmId="GTM-M9SGVQTL" />
 
+      <body className={inter.className}>
         {/* Notification Toast */}
         <Toaster
           position="top-center"

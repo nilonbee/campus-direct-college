@@ -12,9 +12,19 @@ import {
 import { InterestedSection } from "@/components/organisms";
 import { getScholarships } from "@/utils/api-requests";
 import { rootImagePath } from "@/utils/rootImagePath";
+import { GoogleTagManager } from "@next/third-parties/google";
 import React from "react";
 
 export const revalidate = 10;
+
+export const metadata = {
+  title: "Scholarships - Campus Direct | Your Trusted Education Partner",
+  description:
+    "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+  keywords: "study abroad, education consultancy, campus direct",
+  canonical: "https://www.campusdirect.io/scholarships",
+  url: "https://www.campusdirect.io/scholarships",
+};
 
 const Scholarships = async () => {
   const filterOptions = {
@@ -28,6 +38,7 @@ const Scholarships = async () => {
 
   return (
     <>
+      <GoogleTagManager gtmId="GTM-M9SGVQTL" />
       <Hero />
       <ScholarshipsBanner />
       <ContainerLayout>

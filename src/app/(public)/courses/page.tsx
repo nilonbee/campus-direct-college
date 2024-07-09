@@ -17,6 +17,16 @@ import {
   getIntakes,
   getSubjects,
 } from "@/utils/api-requests";
+import { GoogleTagManager } from "@next/third-parties/google";
+
+export const metadata = {
+  title: "Courses - Campus Direct | Your Trusted Education Partner",
+  description:
+    "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+  keywords: "study abroad, education consultancy, campus direct",
+  canonical: "https://www.campusdirect.io/courses",
+  url: "https://www.campusdirect.io/courses",
+};
 
 const CoursePage = async () => {
   const filterData = {
@@ -31,6 +41,7 @@ const CoursePage = async () => {
 
   return (
     <>
+      <GoogleTagManager gtmId="GTM-M9SGVQTL" />
       <div className="from-[#1c37c1] to-[#089ea2] bg-gradient-to-r -mt-2">
         <ContainerLayout>
           <div className="flex flex-col gap-2 justify-center items-center self-stretch relative xs:h-[180px]  md:h-[200px] ">

@@ -24,9 +24,46 @@ import {
   getIntakes,
   getSubjects,
 } from "@/utils/api-requests";
+import { GoogleTagManager } from "@next/third-parties/google";
 import React from "react";
 
 export const revalidate = 10;
+
+export const metadata = {
+  title: "Campus Direct | Your Trusted Education Partner",
+  description:
+    "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+  keywords: "study abroad, education consultancy, campus direct",
+  themeColor: "#065DA8",
+  canonical: "https://www.campusdirect.io",
+  url: "https://www.campusdirect.io",
+  openGraph: {
+    title: "Campus Direct | Your Trusted Education Partner",
+    description:
+      "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+    url: "https://www.campusdirect.io",
+    siteName: "Campus Direct",
+    images: [
+      {
+        url: "https://ik.imagekit.io/cdukstore/logo/Logo-Clr.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    handle: "@Campus_DirectUK",
+    site: "@Campus_DirectUK",
+    cardType: "summary_large_image",
+  },
+  robots: "index, follow",
+  viewport: "width=device-width, initial-scale=1.0",
+  author: "Campus Direct",
+  publisher: "Campus Direct",
+  alternate: "https://www.campusdirect.io",
+};
 
 export default async function Home() {
   const courseLevels = (await getCourseLevels({ status: 1 })) as ICourseLevel[];
@@ -37,6 +74,7 @@ export default async function Home() {
 
   return (
     <>
+      <GoogleTagManager gtmId="GTM-M9SGVQTL" />
       <BannerCarousel />
       <div className="from-[#1c37c1] to-[#089ea2] bg-gradient-to-r -mt-2">
         <ContainerLayout>

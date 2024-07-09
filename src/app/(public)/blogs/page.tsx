@@ -9,14 +9,25 @@ import {
 import { InterestedSection } from "@/components/organisms";
 import { IBlogResponse } from "@/types/blogs";
 import { getBlogs } from "@/utils/api-requests";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const revalidate = 10;
+
+export const metadata = {
+  title: "Latest Blogs - Campus Direct | Your Trusted Education Partner",
+  description:
+    "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+  keywords: "study abroad, education consultancy, campus direct",
+  canonical: "https://www.campusdirect.io/blogs",
+  url: "https://www.campusdirect.io/blogs",
+};
 
 const BlogsPage = async () => {
   const blogs: IBlogResponse = await getBlogs({ page: 1, pageSize: 20 });
 
   return (
     <>
+      <GoogleTagManager gtmId="GTM-M9SGVQTL" />
       <Hero />
       <ContainerLayout>
         <div className="pt-12 pb-12">

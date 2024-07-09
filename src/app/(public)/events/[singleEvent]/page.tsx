@@ -9,10 +9,54 @@ import convertArrayToObjectArray from "@/utils/convertArray";
 
 import { SingleEventBox } from "@/components/molecules";
 import { IDateLocation, IEvent, IMapLocation } from "@/types/events";
-import { getEventBySlug } from "@/utils/api-requests";
+import { getEventBySlug, getEvents } from "@/utils/api-requests";
 import { rootImagePath } from "@/utils/rootImagePath";
 
-const SingleEventPage = async ({ params }: any) => {
+export async function generateStaticParams() {
+  const events = (await getEvents()) as IEvent[];
+  return events.map((event: IEvent) => ({
+    singleEvent: event.slug,
+  }));
+}
+interface EventPageProps {
+  params: { singleEvent: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+
+export async function generateMetadata({ params }: EventPageProps) {
+  const response = await getEventBySlug(params.singleEvent);
+  const { meta_title, meta_description, meta_keywords, cover_url } =
+    response?.event as IEvent;
+  return {
+    title: `${meta_title} - Campus Direct`,
+    description: meta_description,
+    keywords: meta_keywords,
+    canonical: `https://www.campusdirect.io/events/${params.singleEvent}`,
+    url: `https://www.campusdirect.io/events/${params.singleEvent}`,
+    openGraph: {
+      title: `${meta_title} - Campus Direct`,
+      description: meta_description,
+      url: `https://www.campusdirect.io/events/${params.singleEvent}`,
+      images: [
+        {
+          url: rootImagePath(cover_url as string),
+          width: 800,
+          height: 600,
+        },
+      ],
+      siteName: "Campus Direct",
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      handle: "@Campus_DirectUK",
+      site: "@Campus_DirectUK",
+      cardType: "summary_large_image",
+    },
+  };
+}
+
+const SingleEventPage = async ({ params }: EventPageProps) => {
   const response = await getEventBySlug(params.singleEvent);
   const {
     title,
@@ -22,8 +66,6 @@ const SingleEventPage = async ({ params }: any) => {
     application_url,
     dates_n_locations,
     meta_description,
-    meta_title,
-    meta_keywords,
   } = response?.event as IEvent;
   const mapDetails: IMapLocation[] = convertArrayToObjectArray(map_locations);
   const dates: IDateLocation[] = convertArrayToObjectArray(dates_n_locations);
@@ -33,7 +75,7 @@ const SingleEventPage = async ({ params }: any) => {
       <Hero />
       <ContainerLayout>
         <div className="my-12">
-          <SectionHeader title={meta_title} description={meta_description} />
+          <SectionHeader title={title} description={meta_description} />
         </div>
         <InnerContainer>
           <SingleEventBox
