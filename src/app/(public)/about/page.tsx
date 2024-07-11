@@ -9,7 +9,6 @@ import React from "react";
 import { PeopleIcon, TargetIcon, LightIcon } from "@components/atoms/Icons";
 import { InterestedSection } from "@/components/organisms";
 import { rootImagePath } from "@/utils/rootImagePath";
-import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata = {
   title: "About Us - Campus Direct | Your Trusted Education Partner",
@@ -78,7 +77,6 @@ const segments = [
 const AboutPage = () => {
   return (
     <>
-      <GoogleTagManager gtmId="GTM-M9SGVQTL" />
       <Hero />
       <ContainerLayout>
         <div className="pt-12 pb-12">

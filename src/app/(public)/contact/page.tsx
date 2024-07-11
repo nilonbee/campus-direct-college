@@ -10,7 +10,6 @@ import {
   AddressSection,
   ContactInfoSection,
 } from "@/components/organisms";
-import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata = {
   title: "Contact Us - Campus Direct | Your Trusted Education Partner",
@@ -24,7 +23,6 @@ export const metadata = {
 const ContactPage = () => {
   return (
     <>
-      <GoogleTagManager gtmId="GTM-M9SGVQTL" />
       <Hero />
       <ContainerLayout>
         <div className="my-12">

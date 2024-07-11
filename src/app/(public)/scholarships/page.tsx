@@ -12,7 +12,6 @@ import {
 import { InterestedSection } from "@/components/organisms";
 import { getScholarships } from "@/utils/api-requests";
 import { rootImagePath } from "@/utils/rootImagePath";
-import { GoogleTagManager } from "@next/third-parties/google";
 import React from "react";
 
 export const revalidate = 10;
@@ -38,7 +37,6 @@ const Scholarships = async () => {
 
   return (
     <>
-      <GoogleTagManager gtmId="GTM-M9SGVQTL" />
       <Hero />
       <ScholarshipsBanner />
       <ContainerLayout>

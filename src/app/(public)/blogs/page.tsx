@@ -9,7 +9,6 @@ import {
 import { InterestedSection } from "@/components/organisms";
 import { IBlogResponse } from "@/types/blogs";
 import { getBlogs } from "@/utils/api-requests";
-import { GoogleTagManager } from "@next/third-parties/google";
 
 export const revalidate = 10;
 
@@ -27,7 +26,6 @@ const BlogsPage = async () => {
 
   return (
     <>
-      <GoogleTagManager gtmId="GTM-M9SGVQTL" />
       <Hero />
       <ContainerLayout>
         <div className="pt-12 pb-12">

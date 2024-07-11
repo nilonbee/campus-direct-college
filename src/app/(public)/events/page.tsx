@@ -8,7 +8,6 @@ import { EventBox, GridWrapper } from "@/components/molecules/";
 import { InterestedSection } from "@/components/organisms";
 import { IEvent } from "@/types/events";
 import { getEvents } from "@/utils/api-requests";
-import { GoogleTagManager } from "@next/third-parties/google";
 
 export const revalidate = 10;
 
@@ -25,7 +24,6 @@ const EventsPage = async () => {
   const events = await getEvents();
   return (
     <>
-      <GoogleTagManager gtmId="GTM-M9SGVQTL" />
       <Hero />
       <ContainerLayout>
         <div className="my-12">

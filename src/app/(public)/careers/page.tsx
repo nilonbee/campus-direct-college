@@ -2,7 +2,6 @@ import { ContainerLayout, Hero, InnerContainer } from "@/components/atoms";
 import { CareersBanner } from "@/components/molecules";
 import { CareerSection, InterestedSection } from "@/components/organisms";
 import { getCareers } from "@/utils/api-requests";
-import { GoogleTagManager } from "@next/third-parties/google";
 
 export const revalidate = 10;
 
@@ -21,7 +20,6 @@ const CareersPage = async () => {
 
   return (
     <>
-      <GoogleTagManager gtmId="GTM-M9SGVQTL" />
       <Hero />
       <CareersBanner />
       <ContainerLayout>
