@@ -6,7 +6,7 @@ import { useUserStore } from "@/store";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-export default function LoginPage() {
+const LoginPage = () => {
   const router = useRouter();
 
   const { authUser } = useUserStore();
@@ -33,4 +33,6 @@ export default function LoginPage() {
       </InnerContainer>
     </ContainerLayout>
   );
-}
+};
+
+export default LoginPage;

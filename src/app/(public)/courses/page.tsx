@@ -18,6 +18,15 @@ import {
   getSubjects,
 } from "@/utils/api-requests";
 
+export const metadata = {
+  title: "Courses - Campus Direct | Your Trusted Education Partner",
+  description:
+    "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+  keywords: "study abroad, education consultancy, campus direct",
+  canonical: "https://www.campusdirect.io/courses",
+  url: "https://www.campusdirect.io/courses",
+};
+
 const CoursePage = async () => {
   const filterData = {
     limit: 20,

@@ -21,35 +21,35 @@ export const BannerCarousel = () => {
       <Slider {...settings} className="w-full object-cover overflow-hidden">
         <div>
           <img
-            src={rootImagePath("/Slider/slider01.jpg")}
+            src={rootImagePath("Slider/slider01.jpg?tr=w-1800")}
             alt="banner1"
             className="w-full"
           />
         </div>
         <div>
           <img
-            src={rootImagePath("/Slider/slider02.jpg")}
+            src={rootImagePath("Slider/slider02.jpg?tr=w-1800")}
             alt="banner2"
             className="w-full"
           />
         </div>
         <div>
           <img
-            src={rootImagePath("/Slider/slider03.jpg")}
+            src={rootImagePath("Slider/slider03.jpg?tr=w-1800")}
             alt="banner3"
             className="w-full"
           />
         </div>
         <div>
           <img
-            src={rootImagePath("/Slider/slider04.jpg")}
+            src={rootImagePath("Slider/slider04.jpg?tr=w-1800")}
             alt="banner4"
             className="w-full"
           />
         </div>
         <div>
           <img
-            src={rootImagePath("/Slider/slider05.jpg")}
+            src={rootImagePath("Slider/slider05.jpg?tr=w-1800")}
             alt="banner5"
             className="w-full"
           />

@@ -4,46 +4,70 @@ import { CourseBoxModel, GridWrapper } from "@/components/molecules";
 import { CourseViewDrawer } from "@/components/organisms";
 import { ICourse } from "@/types/courses";
 import { IIntake } from "@/types/intakes";
-import { getIntakes, getScholarshipBySlug } from "@/utils/api-requests";
+import {
+  getIntakes,
+  getScholarshipBySlug,
+  getScholarships,
+} from "@/utils/api-requests";
 import { rootImagePath } from "@/utils/rootImagePath";
-import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 import { FiUsers } from "react-icons/fi";
 
-const ScholarshipsPage = async ({ params }: any) => {
+export async function generateStaticParams() {
+  const filterOptions = {
+    page: 1,
+    pageSize: 1000,
+    status: "all",
+    country_id: "",
+    uni_id: "",
+  };
+  const scholarships = await getScholarships(filterOptions);
+  return scholarships.map((scholarship: any) => ({
+    slug: scholarship.slug,
+  }));
+}
+
+interface PageProps {
+  params: { slug: string };
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const scholarshipData = await getScholarshipBySlug(params.slug);
+  return {
+    title: scholarshipData?.meta_title,
+    description: scholarshipData?.meta_description,
+    keywords: scholarshipData?.meta_keywords,
+    canonical: `https://www.campusdirect.io/scholarships/${scholarshipData?.slug}`,
+    url: `https://www.campusdirect.io/scholarships/${scholarshipData?.slug}`,
+    openGraph: {
+      title: scholarshipData?.meta_title,
+      description: scholarshipData?.meta_description,
+      url: `https://www.campusdirect.io/scholarships/${scholarshipData?.slug}`,
+      images: [
+        {
+          url: rootImagePath(scholarshipData?.cover_url),
+          width: 800,
+          height: 600,
+        },
+      ],
+      siteName: "Campus Direct",
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      handle: "@Campus_DirectUK",
+      site: "@Campus_DirectUK",
+      cardType: "summary_large_image",
+    },
+  };
+}
+
+const ScholarshipsPage = async ({ params }: PageProps) => {
   const scholarshipData = await getScholarshipBySlug(params.slug);
   const intakes = (await getIntakes({ status: 1 })) as IIntake[];
   return (
     <div>
-      <Head>
-        <title>{scholarshipData?.title}</title>
-        <meta name="description" content={scholarshipData.meta_description} />
-        <meta property="keywords" content={scholarshipData.meta_keywords} />
-        <meta property="og:title" content={scholarshipData.meta_title} />
-        <meta
-          property="og:description"
-          content={scholarshipData.meta_description}
-        />
-        <meta
-          property="og:image"
-          content={rootImagePath(scholarshipData.cover_url)}
-        />
-        <meta
-          property="og:url"
-          content={`https://campusdirect.io/blog/${scholarshipData.slug}`}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={scholarshipData.meta_title} />
-        <meta
-          name="twitter:description"
-          content={scholarshipData.meta_description}
-        />
-        <meta
-          name="twitter:image"
-          content={rootImagePath(scholarshipData.cover_url)}
-        />
-      </Head>
       <Hero />
       <Image
         src={rootImagePath(scholarshipData.banner_url)}

@@ -10,6 +10,15 @@ import { PeopleIcon, TargetIcon, LightIcon } from "@components/atoms/Icons";
 import { InterestedSection } from "@/components/organisms";
 import { rootImagePath } from "@/utils/rootImagePath";
 
+export const metadata = {
+  title: "About Us - Campus Direct | Your Trusted Education Partner",
+  description:
+    "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+  keywords: "study abroad, education consultancy, campus direct",
+  canonical: "https://www.campusdirect.io/about-us",
+  url: "https://www.campusdirect.io/about-us",
+};
+
 const articles = [
   {
     id: 1,

@@ -13,7 +13,48 @@ import { IBlogResponse } from "@/types/blogs";
 import Image from "next/image";
 import Head from "next/head";
 
-const BlogSinglePage = async ({ params }: any) => {
+export async function generateStaticParams() {
+  const blogs: IBlogResponse = await getBlogs({ page: 1, pageSize: 1000 });
+  return blogs.data.map((blog) => ({
+    slug: blog.slug,
+  }));
+}
+
+interface BlogPageProps {
+  params: { slug: string };
+}
+
+export async function generateMetadata({ params }: BlogPageProps) {
+  const blogData = await getBlogBySlug(params.slug);
+  return {
+    title: blogData.title,
+    description: blogData.seo_description,
+    keywords: blogData.seo_keywords,
+    canonical: `https://www.campusdirect.io/blog/${params.slug}`,
+    url: `https://www.campusdirect.io/blog/${params.slug}`,
+    openGraph: {
+      title: blogData.title,
+      description: blogData.seo_description,
+      url: `https://www.campusdirect.io/blog/${params.slug}`,
+      images: [
+        {
+          url: rootImagePath(blogData.image_path),
+          width: 800,
+          height: 600,
+        },
+      ],
+      siteName: "Campus Direct",
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      handle: "@Campus_DirectUK",
+      site: "@Campus_DirectUK",
+    },
+  };
+}
+
+const BlogSinglePage = async ({ params }: BlogPageProps) => {
   const blogData = await getBlogBySlug(params.slug);
   const blogs = (await getBlogs({ page: 1, pageSize: 4 })) as IBlogResponse;
 
