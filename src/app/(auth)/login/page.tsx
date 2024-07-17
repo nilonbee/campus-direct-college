@@ -6,16 +6,7 @@ import { useUserStore } from "@/store";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-export const metadata = {
-  title: "Login - Campus Direct | Your Trusted Education Partner",
-  description:
-    "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
-  keywords: "study abroad, education consultancy, campus direct",
-  canonical: "https://www.campusdirect.io/login",
-  url: "https://www.campusdirect.io/login",
-};
-
-export default function LoginPage() {
+const LoginPage = () => {
   const router = useRouter();
 
   const { authUser } = useUserStore();
@@ -42,4 +33,6 @@ export default function LoginPage() {
       </InnerContainer>
     </ContainerLayout>
   );
-}
+};
+
+export default LoginPage;
