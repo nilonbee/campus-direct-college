@@ -38,7 +38,7 @@ export const PhoneInputField = React.forwardRef<HTMLInputElement, Props>(
     const inputRef = useRef<HTMLInputElement | null>(null);
     useImperativeHandle(ref, () => inputRef.current as HTMLInputElement);
     return (
-      <div className={`mb-${noMargin ? "0" : "4"}`}>
+      <div className={`mb-${noMargin ? "0" : "4"} w-full`}>
         {label && (
           <label
             className={`block text-sm mb-2 font-medium  ${error ? "text-errorMsg" : "text-gray"} `}
@@ -58,8 +58,14 @@ export const PhoneInputField = React.forwardRef<HTMLInputElement, Props>(
               "--react-international-phone-background-color": backgroundColor,
             } as React.CSSProperties
           }
-          inputStyle={{ height: "36px", border: "none", width: "100%" }}
-          className={`block w-full focus:shadow-md py-1 pr-20  text-gray ring-1 ring-inset ring-border leading-tight focus:outline-none focus:shadow-outline rounded h-[46px] mt-2 ${errorCSS} bg-[${backgroundColor}]`}
+          inputStyle={{
+            height: "38px",
+            border: "none",
+            width: "100%",
+            marginTop: "1px",
+            marginRight: "1px",
+          }}
+          className={`block w-full focus:shadow-md   text-gray ring-1 ring-inset ring-border leading-tight focus:outline-none focus:shadow-outline rounded-md h-[40px] mt-2 ${errorCSS} bg-[${backgroundColor}]`}
           {...rest}
         />
 
