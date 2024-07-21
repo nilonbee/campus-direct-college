@@ -21,3 +21,4 @@ export * from "./LoadingSpinner";
 export * from "./Avatar";
 export * from "./EmptyState";
 export * from "./FlagIcon";
+export * from "./CheckBox";

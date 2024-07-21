@@ -1,5 +1,5 @@
 "use client";
-import { MainButton } from "@/components/atoms";
+import { CheckBox, MainButton } from "@/components/atoms";
 import {
   InputField,
   InputSelectField,
@@ -12,6 +12,7 @@ import React, { useRef, useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FaCircleCheck } from "react-icons/fa6";
+
 type FormValues = {
   fullName: string;
   email: string;
@@ -44,6 +45,10 @@ export const LeadsForm = ({ countries }: LeadsFormProps) => {
   const [step, setStep] = useState(1);
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    if (!isAgreed) {
+      toast.error("Please agree to the terms and conditions");
+      return;
+    }
     setLoading(true);
     data.fundedBy = foundOptions?.find((item) => item.value === +data.fundedBy)
       ?.label as string;
@@ -108,6 +113,11 @@ export const LeadsForm = ({ countries }: LeadsFormProps) => {
 
   const otpVerification = async () => {
     setLoading(true);
+    if (otp.join("").length !== 6) {
+      toast.error("Please enter the valid OTP");
+      setLoading(false);
+      return;
+    }
     const removePlus = applicationData?.contactNo.replace("+", "");
     const response = await verifyOtpSms(removePlus as string, otp.join(""));
     if (response.status === "success") {
@@ -279,19 +289,21 @@ export const LeadsForm = ({ countries }: LeadsFormProps) => {
             />
           </div>
           <div className="flex mb-4">
-            <input
-              type="checkbox"
-              className="h-5 w-5 text-blue-500  cursor-pointer transition duration-150 ease-in-out checked:bg-blue-600 checked:border-transparent mt-1"
-              checked={isAgreed}
-              onChange={() => setIsAgreed(!isAgreed)}
+            <CheckBox
+              isChecked={isAgreed}
+              setIsChecked={setIsAgreed}
+              id="agreed-checkbox"
             />
-            <label className="text-sm ml-2 text-black/60">
+            <label
+              className="text-sm ml-2 text-black/60 cursor-pointer"
+              htmlFor="agreed-checkbox"
+            >
               I have read and agreed to{" "}
-              <a href="#" className="text-primary">
+              <a href="#" className="text-primary" target="_blank">
                 Terms
               </a>
               &nbsp;and&nbsp;
-              <a href="#" className="text-primary">
+              <a href="#" className="text-primary" target="_blank">
                 Privacy Policy
               </a>
             </label>

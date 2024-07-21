@@ -11,7 +11,6 @@ import { SORT_OPTIONS, TUITION_FEES } from "./filterData";
 import { MainButton } from "@/components/atoms";
 import { useEffect, useState } from "react";
 import { arrayFormatterForOptions } from "@/utils/arrayFormatterForOptions";
-import { IoFilter } from "react-icons/io5";
 interface FilterSideBarProps {
   initCountries: ICountry[];
   initCourseLevels: ICourseLevel[];
@@ -39,7 +38,6 @@ export const FilterSideBar = ({
   } = useCourseFilterStore();
 
   const [isClear, setIsClear] = useState<boolean>(false);
-  const [showMoreFilters, setShowMoreFilters] = useState(false);
 
   const clearFilters = () => {
     setFilter({
@@ -95,10 +93,8 @@ export const FilterSideBar = ({
 
   return (
     <div className="w-full ">
-      <div className="flex lg:justify-between md:justify-around relative">
-        <div
-          className={` relative flex gap-1 flex-wrap ${showMoreFilters ? "h-full" : "max-h-[36px] overflow-hidden"}`}
-        >
+      <div className="flex lg:justify-between md:justify-around ">
+        <div className={` flex gap-1 flex-wrap h-full`}>
           <MultiSelectDropdown
             formFieldName={"Location"}
             options={arrayFormatterForOptions(initCountries, "name")}
@@ -172,7 +168,7 @@ export const FilterSideBar = ({
         </div>
       </div>
       {/* Show Selected Filters */}
-      <div className="lg:hidden">
+      {/* <div className="lg:hidden">
         <button
           className="text-xs text-primary hover:underline bg-gray/10 p-2 rounded-md mt-2 flex items-center gap-1"
           onClick={() => setShowMoreFilters(!showMoreFilters)}
@@ -180,7 +176,7 @@ export const FilterSideBar = ({
           <IoFilter size={18} />{" "}
           {showMoreFilters ? "Show Less" : "More Filters"}
         </button>
-      </div>
+      </div> */}
 
       {(filter.country_ids.length > 0 ||
         filter.course_level_ids.length > 0 ||
