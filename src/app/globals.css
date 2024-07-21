@@ -227,3 +227,17 @@ html {
   padding: 0 !important;
   margin-left: 2px !important;
 }
+
+.otp-input {
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 0.375rem; /* Equivalent to rounded-md */
+  font-size: 1.5rem;
+}
+
+.otp-input:focus {
+  outline: none;
+  border-color: #065da8; /* Customize the focus border color if needed */
+}

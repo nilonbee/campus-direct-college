@@ -11,7 +11,7 @@ import { SORT_OPTIONS, TUITION_FEES } from "./filterData";
 import { MainButton } from "@/components/atoms";
 import { useEffect, useState } from "react";
 import { arrayFormatterForOptions } from "@/utils/arrayFormatterForOptions";
-
+import { IoFilter } from "react-icons/io5";
 interface FilterSideBarProps {
   initCountries: ICountry[];
   initCourseLevels: ICourseLevel[];
@@ -39,6 +39,7 @@ export const FilterSideBar = ({
   } = useCourseFilterStore();
 
   const [isClear, setIsClear] = useState<boolean>(false);
+  const [showMoreFilters, setShowMoreFilters] = useState(false);
 
   const clearFilters = () => {
     setFilter({
@@ -93,9 +94,11 @@ export const FilterSideBar = ({
   };
 
   return (
-    <div className="w-full">
-      <div className="flex lg:justify-between md:justify-around">
-        <div className="flex gap-1 flex-wrap">
+    <div className="w-full ">
+      <div className="flex lg:justify-between md:justify-around relative">
+        <div
+          className={` relative flex gap-1 flex-wrap ${showMoreFilters ? "h-full" : "max-h-[36px] overflow-hidden"}`}
+        >
           <MultiSelectDropdown
             formFieldName={"Location"}
             options={arrayFormatterForOptions(initCountries, "name")}
@@ -136,6 +139,26 @@ export const FilterSideBar = ({
               setFilter({ min_max_tuition_fee: selectedOption })
             }
           />
+
+          <SelectDropdown
+            formFieldName={"Sort"}
+            options={SORT_OPTIONS}
+            selectedOption={filter.sort_option}
+            setSelectedOption={(selectedOption) =>
+              setFilter({ sort_option: selectedOption })
+            }
+          />
+        </div>
+
+        <div className="flex gap-1">
+          <MainButton
+            label="Reset"
+            btnStyle="Secondary"
+            btnSize="Small"
+            submit
+            customStyle="h-[36px]"
+            onClick={clearFilters}
+          />
           <MainButton
             label="Apply"
             btnStyle="Primary"
@@ -146,101 +169,71 @@ export const FilterSideBar = ({
             customStyle="h-[36px] w-20"
             onClick={getFilteredData}
           />
-          {/* <SelectDropdown
-            formFieldName={"Duration"}
-            options={DURATION}
-            selectedOption={filter.duration}
-            setSelectedOption={(selectedOption) =>
-              setFilter({ duration: selectedOption })
-            }
-          /> */}
-        </div>
-        <div>
-          <SelectDropdown
-            formFieldName={"Sort"}
-            options={SORT_OPTIONS}
-            selectedOption={filter.sort_option}
-            setSelectedOption={(selectedOption) =>
-              setFilter({ sort_option: selectedOption })
-            }
-          />
         </div>
       </div>
       {/* Show Selected Filters */}
-      <div className="flex gap-2 mt-4">
-        <div className="flex gap-1 flex-wrap">
-          {filter.country_ids.map((item: number, index) => (
-            <FilterBtn
-              key={index}
-              name={
-                initCountries.find((country) => country.id === item)?.name ?? ""
-              }
-              handleRemove={() =>
-                setFilter({
-                  country_ids: filter.country_ids.filter(
-                    (countryId) => countryId !== item,
-                  ),
-                })
-              }
-            />
-          ))}
-          {filter.course_level_ids.map((programmingLevel, index) => (
-            <FilterBtn
-              key={index}
-              name={
-                initCourseLevels.find(
-                  (courseLevel) => courseLevel.id === programmingLevel,
-                )?.level ?? ""
-              }
-              handleRemove={() =>
-                setFilter({
-                  course_level_ids: filter.course_level_ids.filter(
-                    (courseLevel) => courseLevel !== programmingLevel,
-                  ),
-                })
-              }
-            />
-          ))}
-          {filter.subject_ids.map((subject, index) => (
-            <FilterBtn
-              key={index}
-              name={
-                initSubjects.find((subjectItem) => subjectItem.id === subject)
-                  ?.name ?? ""
-              }
-              handleRemove={() =>
-                setFilter({
-                  subject_ids: filter.subject_ids.filter(
-                    (subjectItem) => subjectItem !== subject,
-                  ),
-                })
-              }
-            />
-          ))}
-          {filter.intake_month_ids.map((intake, index) => (
-            <FilterBtn
-              key={index}
-              name={
-                initIntakes.find((intakeItem) => intakeItem.id === intake)
-                  ?.months ?? ""
-              }
-              handleRemove={() =>
-                setFilter({
-                  intake_month_ids: filter.intake_month_ids.filter(
-                    (intakeItem) => intakeItem !== intake,
-                  ),
-                })
-              }
-            />
-          ))}
-        </div>
+      <div className="lg:hidden">
         <button
-          className="text-xs text-primary hover:underline"
-          onClick={clearFilters}
+          className="text-xs text-primary hover:underline bg-gray/10 p-2 rounded-md mt-2 flex items-center gap-1"
+          onClick={() => setShowMoreFilters(!showMoreFilters)}
         >
-          Clear All
+          <IoFilter size={18} />{" "}
+          {showMoreFilters ? "Show Less" : "More Filters"}
         </button>
       </div>
+
+      {(filter.country_ids.length > 0 ||
+        filter.course_level_ids.length > 0 ||
+        filter.subject_ids.length > 0 ||
+        filter.intake_month_ids.length > 0) && (
+        <div className="flex gap-2 mt-4">
+          <div className="flex gap-1 flex-wrap">
+            {filter.country_ids.map((item: number, index) => (
+              <FilterBtn
+                key={index}
+                name={
+                  initCountries.find((country) => country.id === item)?.name ??
+                  ""
+                }
+              />
+            ))}
+            {filter.course_level_ids.map((programmingLevel, index) => (
+              <FilterBtn
+                key={index}
+                name={
+                  initCourseLevels.find(
+                    (courseLevel) => courseLevel.id === programmingLevel,
+                  )?.level ?? ""
+                }
+              />
+            ))}
+            {filter.subject_ids.map((subject, index) => (
+              <FilterBtn
+                key={index}
+                name={
+                  initSubjects.find((subjectItem) => subjectItem.id === subject)
+                    ?.name ?? ""
+                }
+              />
+            ))}
+            {filter.intake_month_ids.map((intake, index) => (
+              <FilterBtn
+                key={index}
+                name={
+                  initIntakes.find((intakeItem) => intakeItem.id === intake)
+                    ?.months ?? ""
+                }
+              />
+            ))}
+          </div>
+          <button
+            className="text-xs text-primary hover:underline"
+            onClick={clearFilters}
+          >
+            Clear All
+          </button>
+        </div>
+      )}
     </div>
   );
 };

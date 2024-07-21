@@ -496,3 +496,56 @@ export async function getCityByStateId(id: string) {
     console.error("Failed to fetch university:", error);
   }
 }
+
+export async function sendOtpSms(contactNo: string) {
+  try {
+    const res = await fetch(`${BASE_URL}/v1/sms/otp-send`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        contactNo: contactNo,
+      }),
+    });
+    const resData = await res.json();
+    return resData.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function verifyOtpSms(contactNo: string, otp: string) {
+  try {
+    const res = await fetch(`${BASE_URL}/v1/sms/otp-verify`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        contactNo: contactNo,
+        otp: otp,
+      }),
+    });
+    const resData = await res.json();
+    return resData;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function submitLeadForm(data: any) {
+  try {
+    const res = await fetch(`${BASE_URL}/v1/submit/lead-form`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const resData = await res.json();
+    return resData;
+  } catch (error) {
+    console.error(error);
+  }
+}

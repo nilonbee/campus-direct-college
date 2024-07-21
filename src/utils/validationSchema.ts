@@ -23,6 +23,14 @@ const validationSchema = {
         "Last Name cannot start or end with spaces and cannot contain only spaces, numbers, or symbols",
     },
   },
+  fullName: {
+    required: "Full Name is required",
+    pattern: {
+      value: /^(?=.*[a-zA-Z])[a-zA-Z0-9\s]+$/,
+      message:
+        "Full Name cannot start or end with spaces and cannot contain only spaces, numbers, or symbols",
+    },
+  },
   email: {
     required: "Email is required",
     pattern: {
@@ -49,6 +57,14 @@ const validationSchema = {
       value: /^\+?[1-9]\d{7,14}$/,
       message:
         "Phone number must be a valid Phone Number with a minimum of 8 digits",
+    },
+  },
+  contactNo: {
+    required: "Contact Number is required",
+    pattern: {
+      value: /^\+?[1-9]\d{7,14}$/,
+      message:
+        "Contact number must be a valid Phone Number with a minimum of 8 digits",
     },
   },
   intake: {
@@ -86,6 +102,9 @@ const validationSchema = {
   },
   city_id: {
     required: "City is required",
+  },
+  requiredField: {
+    required: "This field is required",
   },
 };
 

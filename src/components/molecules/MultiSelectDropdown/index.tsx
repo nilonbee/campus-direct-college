@@ -69,7 +69,10 @@ export const MultiSelectDropdown = ({
   }
 
   return (
-    <div className={`relative ${isFullWidth && "w-full"}`} ref={dropdownRef}>
+    <div
+      className={`relative h-full ${isFullWidth && "w-full"}`}
+      ref={dropdownRef}
+    >
       <button
         type="button"
         className={`relative w-full py-2 pl-4 pr-20 text-left text-gray bg-white rounded-md cursor-pointer text-sm ${borderStyle}`}
@@ -89,7 +92,7 @@ export const MultiSelectDropdown = ({
       </button>
       {isOpen && (
         <div
-          className={`absolute z-10 mt-2 bg-white rounded-md shadow-lg max-h-[300px] overflow-y-auto ${isFullWidth && "w-full"}`}
+          className={`fixed z-10 mt-2 bg-white rounded-md shadow-lg max-h-[300px] overflow-y-auto ${isFullWidth && "w-full"}`}
         >
           <ul className="py-1 ">
             {options.map((option) => (
