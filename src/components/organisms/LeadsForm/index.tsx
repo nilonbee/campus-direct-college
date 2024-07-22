@@ -12,6 +12,7 @@ import React, { useRef, useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FaCircleCheck } from "react-icons/fa6";
+import { IoArrowBackOutline } from "react-icons/io5";
 
 type FormValues = {
   fullName: string;
@@ -61,6 +62,12 @@ export const LeadsForm = ({ countries }: LeadsFormProps) => {
     setApplicationData(data);
     const isLKNumber = await checkTheSLNumber(data.contactNo);
     if (isLKNumber) {
+      const checkLength = data.contactNo.slice(3);
+      if (checkLength.length !== 9) {
+        toast.error("Please enter the valid phone number");
+        setLoading(false);
+        return;
+      }
       const removePlus = data.contactNo.replace("+", "");
       await sendOtpSms(removePlus);
       toast.success("OTP sent successfully");
@@ -131,17 +138,14 @@ export const LeadsForm = ({ countries }: LeadsFormProps) => {
   };
 
   const applicationSubmitData = async (data: FormValues) => {
-    toast.loading("Submitting your application");
     const resData = await submitLeadForm(data);
     if (resData.status === "success") {
       toast.success("Application submitted successfully");
       setStep(3);
       setLoading(false);
-      toast.remove();
     } else {
       toast.error(resData.message);
       setLoading(false);
-      toast.remove();
     }
   };
 
@@ -324,7 +328,15 @@ export const LeadsForm = ({ countries }: LeadsFormProps) => {
 
       {step === 2 && (
         <div className="">
-          <p className="text-lg font-bold text-black/80">Verification Code</p>
+          <div className="flex gap-2 items-center">
+            <IoArrowBackOutline
+              size={24}
+              className="text-black/80 cursor-pointer"
+              onClick={() => setStep(1)}
+            />
+            <p className="text-lg font-bold text-black/80">Verification Code</p>
+          </div>
+
           <p className="text-xs text-black/60 mt-2 mb-4">
             We have sent an OTP to your mobile number. Please enter the OTP to
             verify your mobile number.
