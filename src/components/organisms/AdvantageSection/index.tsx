@@ -13,8 +13,8 @@ export const AdvantageSection = () => {
         <InnerContainer>
           <div className="pt-20 pb-20">
             <SectionHeader
-              title="Campus Direct Advantage"
-              description="Your Trusted Partner in Education "
+              title="Why Choose Us?"
+              description="Here’s Why You Should Select Us"
             />
             <div className="grid gap-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-2 mt-10 w-full">
               <AdvantageCard
