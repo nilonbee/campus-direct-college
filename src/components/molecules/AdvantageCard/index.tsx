@@ -14,7 +14,7 @@ export const AdvantageCard = ({
 }: AdvantageCardProps) => {
   return (
     <div className="p-4">
-      <Image src={icon} width={50} height={50} alt="" />
+      <Image src={icon} width={60} height={60} alt="icons" />
       <h2 className="xs:text-sm md:text-xl text-textColor mt-4">{title}</h2>
       <p className="mt-2 text-textColor/60 xs:text-xs md:text-sm text-justify">
         {description}

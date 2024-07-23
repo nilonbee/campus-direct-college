@@ -13,39 +13,39 @@ export const AdvantageSection = () => {
         <InnerContainer>
           <div className="pt-20 pb-20">
             <SectionHeader
-              title="Leverage Edu Advantage"
-              description="Personalised Attention Matched to Who You Are, Your Unique Profile & Your Unique Aspirations"
+              title="Campus Direct Advantage"
+              description="Your Trusted Partner in Education "
             />
             <div className="grid gap-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-2 mt-10 w-full">
               <AdvantageCard
-                title="Finding The Program That’s Right For You 🧞‍♂️"
-                description="Nothing is as important as selecting the right program. In the right university. In the right country. Getting this right for you means everything to us"
-                icon="/images/icons/DreamCourse.png"
+                title="Personalized Guidance"
+                description="Our team of expert Counsellors will provide you with the right option to match your needs, academic background and future goals"
+                icon="/images/icons/30506415.png"
               />
               <AdvantageCard
-                title="Curated Expert-Led Application Assistance 👩‍🏫"
-                description="Coach who handholds your journey, & the Leverage mobile app which gives you live status at every single step"
-                icon="/images/icons/assistance.png"
+                title="Expert Knowledge"
+                description="All our Counsellors are trained and certified in their respective destination’s education system. This means that all our customer’s get the right information from the best in the market."
+                icon="/images/icons/academic_10433172.png"
               />
               <AdvantageCard
-                title="English Assessment Test Prep On-The-Go 📝"
-                description="Backed by makers of TOEFL, GRE, partners with IELTS, DET, others, & a Product Hunt #1 Learning App - you’re set!"
-                icon="/images/icons/testPrep.png"
+                title="Strong Network"
+                description="At Campus Direct, we work directly with over 200+ universities and institutes across the world. This ensures that our students have access to a diverse range of programmes, scholarships and many more"
+                icon="/images/icons/secure-network_15254485.png"
               />
               <AdvantageCard
-                title="Hacking Thy Interviews & The All-Important VISA passport "
-                description="Self-prep using UnivalleyCRED, Alumni-supported Mocks, & the highest VISA success rate globally arrivedVisa"
-                icon="/images/icons/visa.png"
+                title="Recognized for Quality"
+                description="With over 16 years of experience in Sri Lanka, Campus Direct is committed to maintaining service quality at the highest standards. We hold the ICEF Agency Status (IAS) and are ISO 9001:2015 compliant"
+                icon="/images/icons/award_14118183.png"
               />
               <AdvantageCard
-                title="Solving For Money Money Money! 💰"
-                description="Outside this exclusive Leverage Edu X Nas Daily Scholarship, we bring together $Mn’s worth more scholarship + help find attractive friendly education financing options via Fly Finance"
-                icon="/images/icons/financial.png"
+                title="Comprehensive Guidance"
+                description="Our team of Counsellors will guide you from university selection and application processing to visa processing and pre-departure briefings"
+                icon="/images/icons/decision-making_7891396.png"
               />
               <AdvantageCard
-                title="Making Sure You Stay Right, And Stay Well 🏠"
-                description="With Fly Homes we curate hundreds of options for you that are pre-verified, so that you can focus on what really matters"
-                icon="/images/icons/acco.png"
+                title="Zero Costs"
+                description="All our counselling services to students is FREE OF CHARGE!"
+                icon="/images/icons/dollar_6997727.png"
               />
             </div>
           </div>
