@@ -13,9 +13,11 @@ export const BannerWithForm = async () => {
       <ContainerLayout>
         <div className="flex w-full xs:flex-col sm:flex-col md:flex-row xs:py-20 md:py-36 gap-5">
           <div className="text-white xs:w-full sm:w-full md:w-1/2">
-            <p className="xs:text-sm md:text-lg">Be the next one to</p>
+            <p className="xs:text-sm md:text-lg">
+              Explore Global Opportunities
+            </p>
             <h1 className="xs:text-2xl md:text-4xl font-bold text-[#0487f3]">
-              Study Abroad
+              Find Your Perfect Study Abroad Destination
             </h1>
 
             <div className="mt-8">
@@ -29,8 +31,8 @@ export const BannerWithForm = async () => {
                   />
                 </div>
                 <p className="ml-2 xs:text-base md:text-xl">
-                  First 1000 students to get free flight <br />
-                  ticket
+                  Apply to over 200+ universities and institutes across the
+                  world
                 </p>
               </div>
               <div className="flex mt-2">
@@ -43,8 +45,20 @@ export const BannerWithForm = async () => {
                   />
                 </div>
                 <p className="ml-2 xs:text-base md:text-xl">
-                  Plus first 5000 students to get free ELT <br />
-                  preparation (IELTS/TOEFL/Duolingo/PTE)
+                  100% FREE counseling and services for all students
+                </p>
+              </div>
+              <div className="flex mt-2">
+                <div className="mt-1">
+                  <Image
+                    src="/images/check321.png"
+                    width={30}
+                    height={30}
+                    alt="check"
+                  />
+                </div>
+                <p className="ml-2 xs:text-base md:text-xl">
+                  Over 12,000+ success stories
                 </p>
               </div>
             </div>
