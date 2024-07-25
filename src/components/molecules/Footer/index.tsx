@@ -135,10 +135,7 @@ export const Footer = () => {
               </div>
               <p className="text-sm text-[#e0e0e0]">{countryData?.address}</p>
               <div className="flex gap-6 items-start relative bg-transparent mt-4">
-                <Link
-                  href="https://web.facebook.com/CDUKColombo"
-                  target="_blank"
-                >
+                <Link href="https://www.facebook.com/CDUKL" target="_blank">
                   <FacebookIcon />
                 </Link>
                 <Link
