@@ -231,44 +231,6 @@ export const LeadsForm = ({ countries }: LeadsFormProps) => {
               )}
             />
           </div>
-          <div className="w-full">
-            <Controller
-              name="interestedField"
-              control={control}
-              defaultValue=""
-              rules={validationSchema.requiredField}
-              render={({ field }) => (
-                <div>
-                  <InputSelectField
-                    id="interestedField"
-                    placeholder="Select Interested Field of Study/Course"
-                    options={interestedFieldOptions}
-                    error={errors.interestedField?.message}
-                    {...field}
-                  />
-                </div>
-              )}
-            />
-          </div>
-          <div className="w-full">
-            <Controller
-              name="fundedBy"
-              control={control}
-              defaultValue=""
-              rules={validationSchema.requiredField}
-              render={({ field }) => (
-                <div>
-                  <InputSelectField
-                    id="country_id"
-                    placeholder="How would you fund your education?"
-                    options={foundOptions}
-                    error={errors.fundedBy?.message}
-                    {...field}
-                  />
-                </div>
-              )}
-            />
-          </div>
 
           <div className="w-full">
             <Controller
