@@ -48,3 +48,6 @@ export * from "./ProfileDetails";
 export * from "./DrawerStepper";
 export * from "./ProfileDrawer";
 export * from "./Drawer";
+export * from "./HeaderTwo";
+export * from "./BannerWithForm";
+export * from "./AdvantageCard";

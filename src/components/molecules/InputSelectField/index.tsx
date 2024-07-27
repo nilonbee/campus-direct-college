@@ -13,21 +13,18 @@ type Props = {
 };
 
 export const InputSelectField = React.forwardRef<HTMLSelectElement, Props>(
-  (
-    {
-      label,
-      placeholder,
-      id,
-      required,
-      noMargin,
-      customStyle,
-      error,
-      backgroundColor,
-      options,
-      ...rest
-    },
-    ref,
-  ) => {
+  ({
+    label,
+    placeholder,
+    id,
+    required,
+    noMargin,
+    customStyle,
+    error,
+    backgroundColor,
+    options,
+    ...rest
+  }) => {
     const errorCSS = error
       ? "ring-errorMsg text-errorMsg focus:ring-errorMsg"
       : "";
@@ -43,15 +40,24 @@ export const InputSelectField = React.forwardRef<HTMLSelectElement, Props>(
         )}
 
         <select
-          ref={ref}
-          className={`${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"} block w-full focus:shadow-md rounded-md py-3 pl-4 text-gray ring-1 ring-inset ring-border placeholder:text-grayMedium focus:ring-2 focus:ring-inset focus:ring-primary focus:outline-none text-sm leading-6 ${customStyle} ${errorCSS}`}
+          className={`block w-full focus:shadow-md rounded-md text-gray py-2 pl-4 ring-1 ring-inset ring-border  focus:ring-2 focus:ring-inset focus:ring-primary focus:outline-none text-sm leading-6 ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-white"}  ${customStyle} ${errorCSS}`}
           id={id}
-          // required={required}
           {...rest}
+          style={{
+            WebkitAppearance: "none",
+            MozAppearance: "none",
+            appearance: "none",
+          }}
         >
-          <option value="">{placeholder}</option>
+          <option className="text-errorMsg" value="">
+            {placeholder}
+          </option>
           {options?.map((option, index: number) => (
-            <option key={index} value={option.value}>
+            <option
+              className="text-grayMedium"
+              key={index}
+              value={option.value}
+            >
               {option.label}
             </option>
           ))}

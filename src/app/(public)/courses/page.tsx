@@ -54,7 +54,7 @@ const CoursePage = async () => {
       </div>
       <ContainerLayout>
         <MainSearchBar />
-        <div className="my-10">
+        <div className="mt-10">
           <FilterSideBar
             initCountries={countries}
             initCourseLevels={courseLevels}
@@ -62,7 +62,7 @@ const CoursePage = async () => {
             initIntakes={intakes}
           />
         </div>
-        <div className="w-full flex md:flex-row  sm:flex-col my-10 gap-4 relative">
+        <div className="w-full flex md:flex-row  sm:flex-col gap-4 relative mt-10 mb-10">
           <Courses
             initialCourseData={initialCourseData?.data ?? []}
             initialTotalCourses={initialCourseData?.total || 0}

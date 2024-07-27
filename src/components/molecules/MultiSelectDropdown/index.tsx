@@ -1,4 +1,5 @@
 "use client";
+import { CheckBox } from "@/components/atoms";
 import React, { useState, useEffect, useRef } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
@@ -48,19 +49,6 @@ export const MultiSelectDropdown = ({
     setIsOpen(!isOpen);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const isChecked = e.target.checked;
-    const option = e.target.value;
-
-    if (isChecked) {
-      setSelectedOptions([...selectedOptions, +option]);
-    } else {
-      setSelectedOptions(selectedOptions.filter((item) => item !== +option));
-    }
-
-    // onChange(selectedOptions);
-  };
-
   let borderStyle =
     "ring-1 ring-inset ring-border focus:shadow-md focus:outline-none focus:ring-2 focus:ring-primary ";
 
@@ -69,7 +57,10 @@ export const MultiSelectDropdown = ({
   }
 
   return (
-    <div className={`relative ${isFullWidth && "w-full"}`} ref={dropdownRef}>
+    <div
+      className={`relative h-full ${isFullWidth && "w-full"}`}
+      ref={dropdownRef}
+    >
       <button
         type="button"
         className={`relative w-full py-2 pl-4 pr-20 text-left text-gray bg-white rounded-md cursor-pointer text-sm ${borderStyle}`}
@@ -95,15 +86,22 @@ export const MultiSelectDropdown = ({
             {options.map((option) => (
               <li key={option.value} className="px-4 py-2 hover:bg-grayLight">
                 <label className="flex items-center space-x-2 cursor-pointer ">
-                  <div>
-                    <input
-                      type="checkbox"
-                      className="form-checkbox h-5 w-5 text-blue-500 rounded cursor-pointer transition duration-150 ease-in-out checked:bg-blue-600 checked:border-transparent"
-                      value={option.value}
-                      checked={selectedOptions.includes(option.value)}
-                      onChange={handleChange}
-                    />
-                  </div>
+                  <CheckBox
+                    isChecked={selectedOptions.includes(option.value)}
+                    setIsChecked={(isChecked) => {
+                      if (isChecked) {
+                        setSelectedOptions([...selectedOptions, option.value]);
+                      } else {
+                        setSelectedOptions(
+                          selectedOptions.filter(
+                            (item) => item !== option.value,
+                          ),
+                        );
+                      }
+                    }}
+                    id={option.value.toString()}
+                    value={option.value.toString()}
+                  />
                   <span className="text-gray text-sm text-nowrap">
                     {option.label}
                   </span>

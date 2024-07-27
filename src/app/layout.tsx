@@ -1,11 +1,15 @@
 /* eslint-disable @next/next/next-script-for-ga */
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Script from "next/script";
 import { Viewport } from "next";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Roboto({
+  display: "swap",
+  weight: ["100", "300", "400", "500", "700", "900"],
+  subsets: ["latin-ext"],
+});
 
 export const viewport: Viewport = {
   width: "device-width",
