@@ -5,6 +5,13 @@ import { AddressBox } from "@/components/molecules";
 export const AddressSection = () => {
   const addressList = [
     {
+      branch: "Colombo Branch - Sri Lanka",
+      address:
+        "Campus Direct – Head Office, 36 B, Gower Street, Colombo 05, Sri Lanka",
+      phone: "+94 77 900 5555",
+      email: "info@cduk.lk",
+    },
+    {
       branch: "Kandy Branch - Sri Lanka",
       address: "749/B/1, William Gopallawa Mawatha Kandy",
       phone: "+94 77 234 0055",
@@ -37,7 +44,7 @@ export const AddressSection = () => {
       </div>
       <div className="mt-8">
         <div
-          className={`grid gap-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 w-full`}
+          className={`grid gap-3 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 w-full`}
         >
           {addressList.map((item, index) => (
             <AddressBox

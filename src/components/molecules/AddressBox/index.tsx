@@ -17,12 +17,12 @@ export const AddressBox = ({ branch, address, phone, email }: Props) => {
         {address}
       </p>
       <a href={`tel:${phone}`}>
-        <p className="text-sm text-textColor text-wrap leading-6 mt-2 hover:underline">
+        <p className="text-sm text-textColor text-wrap leading-6 mt-2 hover:underline cursor-pointer">
           {phone}
         </p>
       </a>
       <a href={`mailto:${email}`}>
-        <p className="text-sm text-textColor text-wrap leading-6 mt-2 hover:underline">
+        <p className="text-sm text-textColor text-wrap leading-6 mt-2 hover:underline cursor-pointer">
           {email}
         </p>
       </a>

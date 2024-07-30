@@ -173,7 +173,6 @@ export const LeadsForm = ({ countries }: LeadsFormProps) => {
 
   return (
     <div className="bg-whiteSmoke p-5 rounded-md shadow-md xs:w-full md:w-[380px] h-fit">
-      <a id="apply-now" className="pt-24"></a>
       {step === 1 && (
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
           <div className="w-full">
@@ -278,7 +277,7 @@ export const LeadsForm = ({ countries }: LeadsFormProps) => {
 
           <MainButton
             customStyle=""
-            label="Apply Now"
+            label="Submit Now"
             btnSize="Medium"
             fullWith
             btnStyle="Primary"

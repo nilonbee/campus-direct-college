@@ -63,14 +63,14 @@ export const BannerWithForm = async () => {
               </div>
             </div>
             <div className="flex  mt-8 xs:gap-4 md:gap-8 ">
-              <FlagIcon url="/images/flag/usa.svg" title="USA" />
+              <FlagIcon url="/images/flag/uk.svg" title="UK" />
               <FlagIcon url="/images/flag/australia.png" title="Australia" />
               <FlagIcon url="/images/flag/canada.svg" title="Canada" />
-              <FlagIcon url="/images/flag/uk.svg" title="UK" />
               <FlagIcon
                 url="/images/flag/new-zealand1.png"
                 title="New Zealand"
               />
+              <FlagIcon url="/images/flag/m-flg.png" title="+ More" />
             </div>
           </div>
           <div className="flex justify-end xs:w-full sm:w-full md:w-1/2">
