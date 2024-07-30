@@ -1,4 +1,4 @@
-import { ContainerLayout } from "@/components/atoms";
+import { ContainerLayout, MainButton } from "@/components/atoms";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,11 +22,14 @@ export const HeaderTwo = () => {
             </Link>
           </div>
           <div className="flex gap-1 items-center">
-            <a
-              href="#apply-now"
-              className="text-primary text-sm border border-primary px-4 py-2 rounded-md"
-            >
-              Submit Now
+            <a href="tel:+94779005555">
+              <MainButton
+                customStyle=""
+                label="Call Now"
+                btnSize="Medium"
+                fullWith
+                btnStyle="Primary"
+              />
             </a>
           </div>
         </nav>
