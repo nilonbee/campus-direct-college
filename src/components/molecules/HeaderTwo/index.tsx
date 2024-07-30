@@ -23,19 +23,11 @@ export const HeaderTwo = () => {
           </div>
           <div className="flex gap-1 items-center">
             <a
-              href="https://wa.me/94779005555"
+              href="#apply-now"
               className="text-primary text-sm border border-primary px-4 py-2 rounded-md"
-              target="_blank"
             >
-              Call us now
+              Submit Now
             </a>
-            <Image
-              src="/images/whatsapp.png"
-              width={20}
-              height={20}
-              alt="whatsapp"
-              className="w-10 h-10"
-            />
           </div>
         </nav>
       </ContainerLayout>

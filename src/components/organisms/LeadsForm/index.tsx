@@ -173,6 +173,7 @@ export const LeadsForm = ({ countries }: LeadsFormProps) => {
 
   return (
     <div className="bg-whiteSmoke p-5 rounded-md shadow-md xs:w-full md:w-[380px] h-fit">
+      <a id="apply-now" className="pt-24"></a>
       {step === 1 && (
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
           <div className="w-full">
@@ -348,8 +349,8 @@ export const LeadsForm = ({ countries }: LeadsFormProps) => {
           <p className="text-lg font-bold text-black/80">Thank you!</p>
           <FaCircleCheck className="text-[#369A67] mt-4" size={60} />
           <p className="text-sm text-black/60 mt-2">
-            Your application has been submitted successfully. Our team will
-            contact you soon.
+            Your data has been submitted successfully. Our team will contact you
+            soon.
           </p>
         </div>
       )}
