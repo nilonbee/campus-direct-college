@@ -25,6 +25,7 @@ import {
   IRegisterRequest,
   IRegisterResponse,
   IResetPasswordRequest,
+  IVerifyEmailRequest,
 } from "@/types/users";
 import { BASE_URL } from "./config";
 
@@ -232,6 +233,22 @@ export async function resetPassword(data: IResetPasswordRequest) {
     return response;
   } catch (error) {
     console.error("Resetting Password failed:", error);
+  }
+}
+
+export async function emailVerify(data: IVerifyEmailRequest) {
+  try {
+    const res = await fetch(`${BASE_URL}/v1/user/verify-email`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const response = await res.json();
+    return response;
+  } catch (error) {
+    console.error("Email verification failed:", error);
   }
 }
 

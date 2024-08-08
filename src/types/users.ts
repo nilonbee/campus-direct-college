@@ -28,6 +28,10 @@ export interface IResetPasswordRequest {
   type: string;
 }
 
+export interface IVerifyEmailRequest {
+  code: string;
+}
+
 export interface IChangePasswordRequest {
   password: string;
   current_password: string;
