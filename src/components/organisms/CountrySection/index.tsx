@@ -4,10 +4,10 @@ import { CountryBox, GridWrapperTwo } from "@/components/molecules";
 export const CountrySection = () => {
   const countries = [
     {
-      name: "USA",
-      img: "country/usa.png",
+      name: "UK",
+      img: "country/uk.png",
       url: "/courses",
-      country_id: 231,
+      country_id: 230,
     },
     {
       name: "Australia",
@@ -22,10 +22,10 @@ export const CountrySection = () => {
       country_id: 38,
     },
     {
-      name: "UK",
-      img: "country/uk.png",
+      name: "New Zealand",
+      img: "country/nz.jpg",
       url: "/courses",
-      country_id: 230,
+      country_id: 157,
     },
   ];
 
