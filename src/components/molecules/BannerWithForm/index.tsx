@@ -8,6 +8,11 @@ import React from "react";
 export const BannerWithForm = async () => {
   const countries = (await getCountries({ status: 1 })) as ICountry[];
 
+  const index = countries.findIndex((country) => country.sortname === "US");
+  if (index > -1) {
+    countries.splice(index, 1);
+  }
+
   return (
     <div className="bg-banner-image">
       <ContainerLayout>
