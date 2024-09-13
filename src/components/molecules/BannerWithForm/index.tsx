@@ -5,7 +5,11 @@ import { getCountries } from "@/utils/api-requests";
 import Image from "next/image";
 import React from "react";
 
-export const BannerWithForm = async () => {
+interface IBannerWithForm {
+  pageId: string;
+}
+
+export const BannerWithForm = async ({ pageId }: IBannerWithForm) => {
   const countries = (await getCountries({ status: 1 })) as ICountry[];
 
   const index = countries.findIndex((country) => country.sortname === "US");
@@ -79,7 +83,7 @@ export const BannerWithForm = async () => {
             </div>
           </div>
           <div className="flex justify-end xs:w-full sm:w-full md:w-1/2">
-            <LeadsForm countries={countries} />
+            <LeadsForm countries={countries} pageId={pageId} />
           </div>
         </div>
       </ContainerLayout>

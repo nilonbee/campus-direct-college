@@ -8,10 +8,10 @@ import {
 } from "@/components/organisms";
 import React from "react";
 
-const AdmissionPage = async () => {
+const DubaiPage = async () => {
   return (
     <>
-      <BannerWithForm pageId={"Colombo"} />
+      <BannerWithForm pageId={"Dubai"} />
       <AdvantageSection />
       <ContainerLayout>
         <StudentsSaysSection />
@@ -26,4 +26,4 @@ const AdmissionPage = async () => {
   );
 };
 
-export default AdmissionPage;
+export default DubaiPage;

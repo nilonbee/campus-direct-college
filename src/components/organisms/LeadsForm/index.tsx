@@ -25,9 +25,10 @@ type FormValues = {
 
 interface LeadsFormProps {
   countries: ICountry[];
+  pageId: string;
 }
 
-export const LeadsForm = ({ countries }: LeadsFormProps) => {
+export const LeadsForm = ({ countries, pageId }: LeadsFormProps) => {
   const {
     control,
     handleSubmit,
@@ -138,7 +139,7 @@ export const LeadsForm = ({ countries }: LeadsFormProps) => {
   };
 
   const applicationSubmitData = async (data: FormValues) => {
-    const resData = await submitLeadForm(data);
+    const resData = await submitLeadForm({ ...data, pageId: pageId });
     if (resData.status === "success") {
       toast.success("Application submitted successfully");
       setStep(3);
