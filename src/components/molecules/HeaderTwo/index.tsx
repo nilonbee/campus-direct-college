@@ -2,7 +2,11 @@ import { ContainerLayout, MainButton } from "@/components/atoms";
 import Image from "next/image";
 import Link from "next/link";
 
-export const HeaderTwo = () => {
+interface HeaderTwoProps {
+  contactNo: string;
+}
+
+export const HeaderTwo = ({ contactNo }: HeaderTwoProps) => {
   return (
     <header className="bg-white shadow-md sticky top-0 z-20">
       <ContainerLayout>
@@ -22,7 +26,7 @@ export const HeaderTwo = () => {
             </Link>
           </div>
           <div className="flex gap-1 items-center">
-            <a href="tel:+94779005555">
+            <a href={`tel:${contactNo}`}>
               <MainButton
                 customStyle=""
                 label="Call Now"
