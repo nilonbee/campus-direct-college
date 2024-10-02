@@ -1,5 +1,5 @@
 import { ContainerLayout, InnerContainer } from "@/components/atoms";
-import { BannerWithForm } from "@/components/molecules";
+import { BannerWithForm, Footer, HeaderTwo } from "@/components/molecules";
 import {
   AddressSection,
   AdvantageSection,
@@ -11,6 +11,7 @@ import React from "react";
 const DubaiPage = async () => {
   return (
     <>
+      <HeaderTwo contactNo="+971585469555" />
       <BannerWithForm pageId={"Dubai"} />
       <AdvantageSection />
       <ContainerLayout>
@@ -22,6 +23,7 @@ const DubaiPage = async () => {
           </div>
         </InnerContainer>
       </ContainerLayout>
+      <Footer />
     </>
   );
 };

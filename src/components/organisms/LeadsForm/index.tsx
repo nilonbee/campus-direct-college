@@ -225,6 +225,7 @@ export const LeadsForm = ({ countries, pageId }: LeadsFormProps) => {
                     placeholder="Enter your phone number"
                     required
                     id="contactNo"
+                    defaultValue={pageId === "Colombo" ? "lk" : "ae"}
                     error={errors.contactNo?.message}
                     {...field}
                   />

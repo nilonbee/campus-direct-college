@@ -15,6 +15,7 @@ type Props = {
   onChange: (value: string) => void;
   error?: string | undefined;
   backgroundColor?: string;
+  defaultValue?: string;
 };
 
 export const PhoneInputField = React.forwardRef<HTMLInputElement, Props>(
@@ -28,6 +29,7 @@ export const PhoneInputField = React.forwardRef<HTMLInputElement, Props>(
       error,
       placeholder,
       backgroundColor,
+      defaultValue,
       ...rest
     },
     ref,
@@ -50,14 +52,9 @@ export const PhoneInputField = React.forwardRef<HTMLInputElement, Props>(
         <PhoneInput
           inputRef={inputRef as MutableRefObject<HTMLInputElement | null>}
           placeholder={placeholder ? placeholder : ""}
-          defaultCountry="lk"
+          defaultCountry={defaultValue ?? "lk"}
           forceDialCode
           onChange={(value: string) => onChange(value)}
-          style={
-            {
-              "--react-international-phone-background-color": backgroundColor,
-            } as React.CSSProperties
-          }
           inputStyle={{
             height: "38px",
             border: "none",
