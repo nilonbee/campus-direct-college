@@ -52,7 +52,7 @@ export const Header = () => {
             <MenuItem menuName="Events" uri="/events" />
             <MenuItem menuName="Scholarships" uri="/scholarships" />
             <MenuItem menuName="Careers" uri="/careers" />
-            <MenuItem menuName="Blogs" uri="/blogs" />
+            {/* <MenuItem menuName="Blogs" uri="/blogs" /> */}
             <MenuItem menuName="Contact Us" uri="/contact" />
           </div>
           <div className="hidden xl:flex xl:flex-1 lg:justify-end gap-4 items-center">
