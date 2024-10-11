@@ -1,7 +1,6 @@
 import { ContainerLayout } from "@/components/atoms";
 import { BannerCarousel, SearchBar } from "@/components/molecules";
 import {
-  BlogSection,
   ContactSection,
   CountrySection,
   CourseViewDrawer,
@@ -106,7 +105,6 @@ export default async function Home() {
       <ContainerLayout>
         <StudentsSaysSection />
         <FAQSection />
-        <BlogSection initBlogs={blogs} />
         <ContactSection />
         <NewsLetterSection />
       </ContainerLayout>
