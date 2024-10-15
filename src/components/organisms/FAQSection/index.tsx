@@ -21,39 +21,37 @@ export const FAQSection: React.FC = () => {
 
   const faqsList: FAQ[] = [
     {
-      question: "Why should we apply through Campus Direct?",
+      question: "Why should I consider studying at Campus Direct College? ",
       answer: [
-        "(01) <b>Extensive Network</b>: We have strong connections with internationally recognized universities and institutions, offering a wide range of tailored options.",
-        "(02) <b>Expert Guidance:</b> Our experienced consultants provide personalized support throughout your application process.",
-        "(03) <b>Successful Track Record:</b> We've placed numerous students in prestigious universities worldwide, helping them achieve their educational aspirations.",
-        "(04) <b>Personal Attention:</b> We understand your unique needs and offer individualized advice to make informed decisions.",
-        "(05) <b>Visa Assistance:</b> We simplify the complex visa process, ensuring a smooth transition to your chosen study destination.",
-      ],
-    },
-    {
-      question: "Are the services provided by Campus Direct free of charge?",
-      answer: [
-        "Our services are free of charge to students throughout the university application and visa process. However, we do charge a fee for any dependants that will be applying through us. Our team will provide you with transparent information about any applicable fees before proceeding with such services.",
+        "Campus Direct College offers a wide range of academic pathways, including Diplomas, Top-up degrees, and postgraduate programs. Our strong partnerships with international universities ensure students have opportunities to transfer abroad or complete their studies locally with globally recognized qualifications. We focus on both academic excellence and practical skills to prepare students for the evolving job market.",
       ],
     },
     {
       question:
-        "Can Campus Direct assist with scholarship opportunities for international students?",
+        "Are there scholarship opportunities available at Campus Direct College? ",
       answer: [
-        "We offer guidance on available scholarships and financial aid opportunities offered by universities. We will assist you in exploring and applying for scholarships that match with your eligibility criteria.",
-      ],
-    },
-    {
-      question: "What are the eligibility requirements for studying abroad?",
-      answer: [
-        "Eligibility requirements for studying abroad vary depending on the country, university, and program you choose. Requirements may include academic qualifications, language proficiency, and financial documentation. Our knowledgeable counselors will guide you through the process and required documents.",
+        "Yes, Campus Direct College offers various scholarship opportunities based on academic merit, extracurricular achievements, and financial need. We also assist students in applying for scholarships with our international university partners to help reduce the financial burden of higher education.",
       ],
     },
     {
       question:
-        "Does Campus Direct provide guidance for both undergraduate and postgraduate studies?",
+        "Is Campus Direct College affiliated with Campus Direct Placement Consultancy?",
       answer: [
-        "Yes, Campus Direct guides both undergraduate and postgraduate studies. Our consultants support you at every academic level.",
+        "Yes, Campus Direct College is part of the broader Campus Direct network. While Campus Direct operates as a placement consultancy assisting students in finding opportunities abroad, Campus Direct College focuses on providing high-quality higher education locally and helping students continue their education internationally through our global partnerships.",
+      ],
+    },
+    {
+      question:
+        "What are the minimum entry requirements for programs at Campus Direct College?",
+      answer: [
+        "The minimum entry requirements vary depending on the program. For undergraduate diplomas and degrees, students typically need a minimum of 5 O/Ls including Mathematics and English, and 2-3 A/L passes. For postgraduate programs, a recognized bachelor's degree or equivalent qualifications are required. We recommend contacting our admissions team for specific entry criteria for your chosen program.",
+      ],
+    },
+    {
+      question:
+        "Does Campus Direct College assist with internship placements for students? ",
+      answer: [
+        "Yes, we provide support in finding internship placements for our students through our industry partnerships. Internships are an integral part of our programs, allowing students to gain practical experience and improve their employability. Our dedicated career services team will guide you throughout the process of securing a relevant internship.",
       ],
     },
   ];

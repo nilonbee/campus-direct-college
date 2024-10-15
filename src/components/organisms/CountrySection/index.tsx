@@ -22,7 +22,7 @@ export const CountrySection = () => {
       country_id: 38,
     },
     {
-      name: "New Zealand",
+      name: "Sri Lanka",
       img: "country/nz.jpg",
       url: "/courses",
       country_id: 157,
@@ -34,8 +34,8 @@ export const CountrySection = () => {
       <div className="mt-20 mb-20">
         <div className="flex flex-col justify-center items-center relative bg-transparent w-full">
           <SectionHeader
-            title="Choose Your Dream Destination"
-            description="Choose from a range of destinations based on your preference."
+            title="Start Your Education Journey"
+            description="Choose from a range of study pathways based on your preference and complete in"
           />
 
           <GridWrapperTwo>

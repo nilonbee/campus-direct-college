@@ -1,7 +1,8 @@
 import { InnerContainer, MainButton, SectionHeader } from "@/components/atoms";
 import { RightArrowIcon } from "@/components/atoms/Icons";
 import { GridWrapper, SubjectBox } from "@/components/molecules";
-import { getSubjects } from "@/utils/api-requests";
+// import { getSubjects } from "@/utils/api-requests";
+import { subjects } from "@/mockData";
 import Link from "next/link";
 import React from "react";
 
@@ -9,7 +10,8 @@ export const SubjectSection = async () => {
   const filterData = {
     status: 1,
   };
-  const subjects = await getSubjects(filterData);
+  // const subjects = await getSubjects(filterData);
+  console.log(subjects, "subjects");
   return (
     <InnerContainer>
       <div className="mt-20 mb-20">
@@ -20,16 +22,14 @@ export const SubjectSection = async () => {
           />
           <div className="mt-10 w-full">
             <GridWrapper>
-              {subjects
-                ?.slice(1, 5)
-                .map((item, index) => (
-                  <SubjectBox
-                    title={item.name}
-                    key={index}
-                    img={item.cover_image}
-                    id={item.id}
-                  />
-                ))}
+              {subjects.map((item, index) => (
+                <SubjectBox
+                  title={item.title}
+                  key={index}
+                  img={item.image}
+                  id={item.id}
+                />
+              ))}
             </GridWrapper>
           </div>
           {/* See More Butn */}

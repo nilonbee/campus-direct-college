@@ -82,7 +82,7 @@ export default async function Home() {
               Find Your Perfect Course
             </h1>
             <h4 className="text-center lg:text-1xl md:text-base sm:text-sm xs:text-xs text-white">
-              Your Journey to the Perfect Course Starts Here!{" "}
+              Your journey to enlightening higher education starts here! !{" "}
             </h4>
           </div>
         </ContainerLayout>
@@ -94,7 +94,7 @@ export default async function Home() {
           initSubjects={subjects}
         />
         <CountrySection />
-        <CoursesSection />
+        {/* <CoursesSection /> */}
         <SubjectSection />
       </ContainerLayout>
       <div className="relative w-full bg-[#d4ebff]">

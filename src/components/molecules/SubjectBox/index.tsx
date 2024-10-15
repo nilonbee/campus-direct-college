@@ -16,9 +16,7 @@ export const SubjectBox = ({ img, title, id }: Props) => {
     <div
       className="relative h-[200px] overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-md"
       style={{
-        backgroundImage: img
-          ? `url(${rootImagePath(img)}?tr=w-300)`
-          : "/images/24738.jpg",
+        backgroundImage: img ? `url(${img}?tr=w-300)` : "/images/24738.jpg",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

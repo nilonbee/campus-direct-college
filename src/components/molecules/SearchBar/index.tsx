@@ -30,7 +30,7 @@ export const SearchBar = ({
     {
       id: 1,
       name: "searchLevel1",
-      label: "Search Course",
+      label: "Search Courses",
       Icon: <SearchIcon />,
     },
     {
@@ -39,16 +39,16 @@ export const SearchBar = ({
       label: "Select Study Level",
       Icon: <HatIcon />,
     },
-    {
-      id: 3,
-      name: "searchLevel3",
-      label: "Select Destination",
-      Icon: <LocationIcon />,
-    },
+    // {
+    //   id: 3,
+    //   name: "searchLevel3",
+    //   label: "Select Destination",
+    //   Icon: <LocationIcon />,
+    // },
     {
       id: 4,
       name: "searchLevel4",
-      label: "Select Subject",
+      label: "Select Subject Area",
       Icon: <BookIcon />,
     },
   ];
@@ -56,7 +56,7 @@ export const SearchBar = ({
   return (
     <InnerContainer>
       {selectedType === null && (
-        <div className=" shadow-lg rounded-md  py-[18px]  grid gap-3 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 -mt-10 w-full bg-white px-5">
+        <div className=" shadow-lg rounded-md  py-[18px]  grid gap-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 -mt-10 w-full bg-white px-5">
           {searchTypes.map((type) => (
             <div
               key={type.id}
@@ -74,7 +74,7 @@ export const SearchBar = ({
         </div>
       )}
       {selectedType !== null && (
-        <div className=" shadow-lg rounded-md  py-[15px]  -mt-10 w-full bg-white px-5">
+        <div className=" shadow-lg rounded-md  py-[15px]  -mt-10 bg-white px-5">
           {selectedType === "searchLevel1" && (
             <SearchByName setSelectedType={setSelectedType} />
           )}
@@ -84,12 +84,12 @@ export const SearchBar = ({
               initCourseLevels={initCourseLevels}
             />
           )}
-          {selectedType === "searchLevel3" && (
+          {/* {selectedType === "searchLevel3" && (
             <SearchByDestination
               setSelectedType={setSelectedType}
               initCountries={initCountries}
             />
-          )}
+          )} */}
           {selectedType === "searchLevel4" && (
             <SearchBySubject
               setSelectedType={setSelectedType}

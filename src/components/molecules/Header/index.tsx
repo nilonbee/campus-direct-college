@@ -22,8 +22,8 @@ export const Header = () => {
           <div className="flex lg:flex-1">
             <Link href="/">
               <Image
-                className="h-14 w-auto"
-                src="/images/Logo-Clr.png"
+                className="h-16 w-auto"
+                src="/images/Logo-Clr.jpg"
                 alt="Campus Direct"
                 width={150}
                 height={50}
@@ -31,7 +31,7 @@ export const Header = () => {
             </Link>
           </div>
           <div className="flex lg:hidden gap-4">
-            {authUser && <ProfileDrawer />}
+            {/* {authUser && <ProfileDrawer />} */}
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-textColor"
@@ -79,7 +79,7 @@ export const Header = () => {
           </div>
 
           <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4 items-center xl:hidden">
-            {authUser && <ProfileDrawer />}
+            {/* {authUser && <ProfileDrawer />} */}
             <Link href="/courses">
               <MainButton
                 label="Find My Course"
@@ -94,7 +94,7 @@ export const Header = () => {
                     <Bars3Icon className="h-8 w-8" aria-hidden="true" />
                   </Menu.Button>
                 </div>
-                <Menu.Items
+                {/* <Menu.Items
                   className="absolute right-0 z-10 w-48 mt-2 origin-top-right bg-white divide-y rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border-red
             "
                 >
@@ -116,7 +116,7 @@ export const Header = () => {
                       </Link>
                     </Menu.Item>
                   </div>
-                </Menu.Items>
+                </Menu.Items> */}
               </Menu>
             )}
           </div>
@@ -190,7 +190,7 @@ export const Header = () => {
                 />
               </div>
               <div className="pt-6 flex flex-col space-y-5">
-                {!authUser && (
+                {/* {!authUser && (
                   <Link
                     href="/login"
                     className="text-sm text-primary"
@@ -207,7 +207,7 @@ export const Header = () => {
                   >
                     Register
                   </Link>
-                )}
+                )} */}
                 <Link onClick={() => setMobileMenuOpen(false)} href="/courses">
                   <div className="px-4 py-2 items-center relative h-18 bg-primary rounded shadow-md">
                     <p className="text-base font-semibold text-white">

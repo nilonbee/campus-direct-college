@@ -63,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="shortcut icon" href="/images/fave.png" />
+        <link rel="shortcut icon" href="/images/fave.jpg" />
         {/* Hotjar Tracking Code */}
         <script
           dangerouslySetInnerHTML={{
