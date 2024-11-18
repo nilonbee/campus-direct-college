@@ -24,24 +24,70 @@ const articles = [
     id: 1,
     image: rootImagePath("/about-us/about-us1.jpg"),
     description: [
-      "Welcome to Campus Direct, your leading career guidance, counseling and student placement service center. With over 16 years of industry experience and a proud legacy of providing world-class educational consultancy, we have been instrumental in guiding countless students towards successful placements in internationally recognized universities and institutions across the UK, USA, Canada, Australia, New Zealand, Germany, Singapore and Malaysia. We have offices conveniently located in Sri Lanka (Colombo and Kandy), United Arab Emirates (Dubai) and the United Kingdom (London), allowing us to provide personalized assistance to students from diverse regions.",
-      "At Campus Direct, we understand the importance of university applications and the significance they hold in shaping students' futures. Our experienced educational consultants are dedicated to assisting and guiding students at every step of their journey. We provide quality advice and personalized guidance ensuring that each student receives comprehensive support throughout the application process.",
+      "Welcome to Campus Direct College, where innovation meets opportunity in higher education. Located in the heart of Colombo, Sri Lanka, we are redefining the educational landscape by empowering students to excel in a rapidly evolving global job market. With a focus on practical skills, real-world knowledge, and comprehensive development, our programs are designed to unlock the potential of every student who walks through our doors. Our mission is simple yet powerful: to deliver a transformative learning experience that bridges the gap between education and professional success.",
+      "For over 16 years, Campus Direct has been a trusted leader in direct placements, connecting thousands of students to life-changing career opportunities. Through personalized guidance, robust industry connections, and unwavering dedication, we have helped countless individuals embark on successful career journeys. Over the years, we have built a reputation for being more than just a service provider; we are a partner in every student’s growth, nurturing ambition and turning potential into performance. Our extensive network of partnerships spans across top-tier institutions, industry leaders, and global enterprises, creating a web of support that benefits our students.",
     ],
   },
   {
     id: 2,
     image: rootImagePath("/about-us/about-us2.jpg"),
+    subHeader: "A Tradition of Excellence",
     description: [
-      "Our team's expertise is backed by extensive knowledge gained through comprehensive training programs conducted by esteemed institutions. These include the UK Agent and Counselor Training Program conducted by the British Council as well as training programs provided by ICEF, partner universities and foreign high commissions. This training ensures that our consultants stay updated with the latest industry developments, university requirements and visa processes, equipping them with the necessary skills to provide reliable guidance to our students.",
-      "As a recognized center for overseas educational consultancy, we are frequently visited by institutions for spot admissions and information sessions. This provides students with unique opportunities to interact with university representatives and gain valuable insights into their desired programs.",
+      "For over 16 years, Campus Direct has been a trusted leader in direct placements, connecting thousands of students to life-changing career opportunities. Through personalized guidance, robust industry connections, and unwavering dedication, we have helped countless individuals embark on successful career journeys. ",
+      "Over the years, we have built a reputation for being more than just a service provider; we are a partner in every student’s growth, nurturing ambition and turning potential into performance. Our extensive network of partnerships spans across top-tier institutions, industry leaders, and global enterprises, creating a web of support that benefits our students.",
     ],
   },
   {
     id: 3,
     image: rootImagePath("/about-us/about-us3.jpg"),
+    subHeader: "Meeting the Needs of Modern Learners",
     description: [
-      "Our counseling services encompass undergraduate and postgraduate studies, covering a wide range of academic disciplines. We provide detailed overviews of available courses, tuition fees specific to the selected program, guidance on applying for scholarships, advice on English language requirements and prerequisite exams, as well as comprehensive visa guidance.",
-      "As an ICEF Agency Status (IAS) accredited center and ISO 9001:2015 certified institution, we assure you of our unwavering commitment to excellence in educational consultancy. Our recognized status and certification signify our adherence to rigorous quality standards and ethical practices. With our proven expertise and dedication we are here to support you in achieving your academic aspirations and paving the way for a successful future.",
+      "Our programs include Pearson-Edexcel Higher National Diplomas (HNDs) in Computing and Business, designed to meet the demands of today’s workforce and to prepare students for a world driven by technology and innovation. We provide a strong foundation that blends rigorous academics with real-world applications, ensuring students graduate with the skills needed to excel professionally.",
+      "Our HNDs are a pathway to success, allowing students to either enter the workforce immediately with a competitive edge or continue their studies through top-up degree programs and further academic pursuits.\n",
+    ],
+  },
+  {
+    id: 4,
+    subHeader: "Comprehensive Higher Education Programs",
+    description: [
+      "While our success in direct placements is notable, we recognize that many students in Sri Lanka seek alternative educational pathways.",
+      " For some, immediate employment may not be the goal; instead, they seek to continue their education, hone new skills, and remain connected to family and community. At Campus Direct College, we have listened to these needs and crafted a solution that offers flexibility, access, and opportunity.\n",
+    ],
+  },
+  {
+    id: 5,
+    subHeader: "Bridging Education and Employment",
+    description: [
+      "We pride ourselves on our innovative dual-approach model, which bridges the gap between academic study and professional development. This model enables our students to simultaneously pursue higher education qualifications and gain practical industry experience. By partnering with leading organizations and industry experts, we offer students direct placement opportunities that align with their career aspirations. This dual focus on learning and working ensures our graduates are not just academically prepared but also equipped with the soft skills, confidence, and adaptability required in the modern workplace.",
+    ],
+  },
+  {
+    id: 7,
+    subHeader: "A Dynamic Learning Environment",
+    description: [
+      "At Campus Direct College, we foster a vibrant, inclusive, and stimulating educational environment that emphasizes innovation, collaboration, and global connectivity. Our students benefit from state-of-the-art facilities, interactive learning spaces, and access to cutting-edge technology. Our faculty comprises passionate educators and industry professionals who bring real-world expertise and innovative teaching methods to the classroom. We prioritize experiential learning, enabling students to apply theoretical knowledge to practical challenges, collaborate on projects, and cultivate critical thinking and leadership skills.\n",
+    ],
+  },
+  {
+    id: 8,
+    subHeader: "Pathways to Global Recognition\n",
+    description: [
+      "We believe in providing students with the opportunity to connect and thrive on a global stage. Our partnerships with reputable British universities create pathways for students to pursue top-up degrees and full degree programs without leaving Sri Lanka. This transnational approach to education ensures our students have access to globally recognized qualifications and exposure to international perspectives, preparing them for success in an increasingly interconnected world.",
+    ],
+  },
+  {
+    id: 9,
+    subHeader: "Our Commitment to Students and Community",
+    description: [
+      "Campus Direct College is more than an educational institution; it is a community dedicated to transforming lives. Our commitment to our students extends beyond the classroom. We support our students every step of the way, from personalized academic guidance and career counseling to alumni networking and professional development opportunities. Our goal is to cultivate confident, capable, and globally-minded graduates who are ready to lead and innovate in their chosen fields.",
+    ],
+  },
+  {
+    id: 9,
+    subHeader: "Transforming Lives, Building Futures",
+    description: [
+      "Our work is driven by a deep belief in the power of education to transform lives and build better futures. We are proud to be part of the journey for countless aspiring professionals in Sri Lanka. Whether students choose to enter the workforce immediately or continue their education through further studies, we are here to ensure they are fully prepared for every step of their journey.",
+      "Welcome to Campus Direct College—where learning, opportunity, and ambition come together to create lasting success. Here, your future begins, and together, we can change the world.",
     ],
   },
 ];
@@ -93,6 +139,7 @@ const AboutPage = () => {
               key={article.id}
               image={article.image}
               description={article.description}
+              subHeader={article.subHeader}
             />
           ))}
 
