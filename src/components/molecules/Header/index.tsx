@@ -56,19 +56,19 @@ export const Header = () => {
             <MenuItem menuName="Contact Us" uri="/contact" />
           </div>
           <div className="hidden xl:flex xl:flex-1 lg:justify-end gap-4 items-center">
-            {authUser ? (
-              <ProfileDrawer />
-            ) : (
-              <Link href="/login" className="text-sm text-primary">
-                Sign in
-              </Link>
-            )}
+            {/*{authUser ? (*/}
+            {/*  <ProfileDrawer />*/}
+            {/*) : (*/}
+            {/*  <Link href="/login" className="text-sm text-primary">*/}
+            {/*    Sign in*/}
+            {/*  </Link>*/}
+            {/*)}*/}
 
-            {!authUser && (
-              <Link href="/register" className="text-sm text-primary">
-                Register
-              </Link>
-            )}
+            {/*{!authUser && (*/}
+            {/*  <Link href="/register" className="text-sm text-primary">*/}
+            {/*    Register*/}
+            {/*  </Link>*/}
+            {/*)}*/}
             <Link href="/courses">
               <MainButton
                 label="Find My Course"
