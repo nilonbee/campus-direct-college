@@ -94,7 +94,7 @@ export default async function Home() {
           initSubjects={subjects}
         />
         <CountrySection />
-        {/* <CoursesSection /> */}
+        {/* <CoursecsSection /> */}
         <SubjectSection />
       </ContainerLayout>
       <div className="relative w-full bg-[#d4ebff]">

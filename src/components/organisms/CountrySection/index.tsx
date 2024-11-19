@@ -5,25 +5,25 @@ export const CountrySection = () => {
   const countries = [
     {
       name: "UK",
-      img: "country/uk.png",
+      img: "campus-direct-college/country-images/UK.png",
       url: "/courses",
       country_id: 230,
     },
     {
       name: "Australia",
-      img: "country/australia.png",
+      img: "campus-direct-college/country-images/Australia.png",
       url: "/courses",
       country_id: 13,
     },
     {
       name: "Canada",
-      img: "country/canada.png",
+      img: "campus-direct-college/country-images/Canada.png",
       url: "/courses",
       country_id: 38,
     },
     {
       name: "Sri Lanka",
-      img: "country/nz.jpg",
+      img: "campus-direct-college/country-images/New-Zealand.png",
       url: "/courses",
       country_id: 157,
     },
