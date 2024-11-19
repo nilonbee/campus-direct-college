@@ -25,7 +25,7 @@ export const AboutParagraph: React.FC<AboutParagraphTypes> = ({
         </div>
       )}
       <div className="block">
-        <p className="mb-4 text-xl font-semibold text-center">{subHeader}</p>
+        <p className="text-base font-medium">{subHeader}</p>
         {description.map((section, index) => (
           <p
             className="text-sm leading-6 text-textColor mb-4 text-justify"

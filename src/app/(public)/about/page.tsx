@@ -70,7 +70,7 @@ const articles = [
   },
   {
     id: 8,
-    subHeader: "Pathways to Global Recognition\n",
+    subHeader: "Pathways to Global Recognition",
     description: [
       "We believe in providing students with the opportunity to connect and thrive on a global stage. Our partnerships with reputable British universities create pathways for students to pursue top-up degrees and full degree programs without leaving Sri Lanka. This transnational approach to education ensures our students have access to globally recognized qualifications and exposure to international perspectives, preparing them for success in an increasingly interconnected world.",
     ],
