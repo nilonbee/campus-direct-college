@@ -1,11 +1,9 @@
 "use client";
-import fetchLocation from "@/utils/fetchLocation";
+import React, { useEffect } from "react";
 import Link from "next/link";
 
 import { contactInfo } from "@/mockData/contact";
 import { listItems } from "@/mockData/footer";
-import { useIpStore } from "@/store/useIpStore";
-import { IContactInfoObject } from "@/types/contactUs";
 import { ContainerLayout, ListItem } from "@components/atoms";
 import {
   EmailIcon,
@@ -17,35 +15,8 @@ import {
   TwitterIcon,
 } from "@components/atoms/Icons";
 import Image from "next/image";
-import React, { useEffect } from "react";
-import { configCountryCode } from "@/utils/config";
 
 export const Footer = () => {
-  const { countryCode, countryData, setCountryCode, setCountryData } =
-    useIpStore();
-
-  useEffect(() => {
-    const fetchCountryCode = async () => {
-      const countryCodeID = await fetchLocation();
-      console.log("countryCodeID", countryCodeID);
-
-      setCountryCode(configCountryCode(countryCodeID));
-      Object.keys(contactInfo as { [key: string]: IContactInfoObject }).map(
-        (key) => {
-          if (key === configCountryCode(countryCodeID)) {
-            setCountryData(
-              contactInfo[
-                key as keyof typeof contactInfo
-              ] as IContactInfoObject,
-            );
-          }
-        },
-      );
-    };
-    fetchCountryCode();
-    // eslint-disable-next-line
-  }, [countryCode]);
-
   return (
     <React.Fragment>
       <div className="from-[#1c37c1] to-[#089ea2] bg-gradient-to-r fadeIn">
@@ -59,9 +30,9 @@ export const Footer = () => {
                 width={500}
                 height={500}
               />
-              <div className="ml-7 mt-4">
+              {/* <div className="ml-7 mt-4">
                 <span id="iasBadge" data-account-id="5286"></span>
-              </div>
+              </div> */}
             </div>
             <div className="">
               <h5 className="font-bold text-base text-white mb-4">
@@ -82,7 +53,7 @@ export const Footer = () => {
               <h5 className="font-bold text-base text-white mb-4">
                 Opening Hours
               </h5>
-              {countryData?.openingTimes.map((item, index) => (
+              {contactInfo?.openingTimes.map((item, index) => (
                 <div key={index}>
                   <h5 className="text-sm text-white mb-2 mt-4">
                     {item.branch}
@@ -107,9 +78,9 @@ export const Footer = () => {
                   Email Us
                 </h5>
               </div>
-              <a href={`mailto:${countryData?.email}`}>
+              <a href={`mailto:${contactInfo?.email}`}>
                 <p className="text-sm text-[#e0e0e0] hover:underline">
-                  {countryData?.email}
+                  {contactInfo?.email}
                 </p>
               </a>
               <div className="flex gap-2 items-center relative bg-transparent mt-4">
@@ -120,9 +91,9 @@ export const Footer = () => {
                   Call Us
                 </h5>
               </div>
-              <a href={`tel:${countryData?.phoneNumber}`}>
+              <a href={`tel:${contactInfo?.phoneNumber}`}>
                 <p className="text-sm text-[#e0e0e0] hover:underline">
-                  {countryData?.phoneNumber}
+                  {contactInfo?.phoneNumber}
                 </p>
               </a>
               <div className="flex gap-2 items-center relative bg-transparent mt-4">
@@ -133,7 +104,7 @@ export const Footer = () => {
                   Visit Us
                 </h5>
               </div>
-              <p className="text-sm text-[#e0e0e0]">{countryData?.address}</p>
+              <p className="text-sm text-[#e0e0e0]">{contactInfo?.address}</p>
               <div className="flex gap-6 items-start relative bg-transparent mt-4">
                 <Link href="https://www.facebook.com/CDUKL" target="_blank">
                   <FacebookIcon />
