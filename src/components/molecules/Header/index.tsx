@@ -61,23 +61,13 @@ export const Header = () => {
             <MenuItem menuName="Scholarships" uri="/scholarships" />
             <MenuItem menuName="Contact Us" uri="/contact" />
             {/* Dropdown Menu for International Students, Alumni, Library */}
-            <HeadlessMenu as="div" className="relative">
-              <div>
-                <p className="text-sm text-textColor hover:text-primary">
+            <div className="relative">
+              <div className="dropdown">
+                <p className="text-sm text-textColor hover:text-primary cursor-pointer">
                   More
                 </p>
-              </div>
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <HeadlessMenu.Items className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="p-3 block ">
+                <div className="hidden absolute right-0 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 dropdown-menu">
+                  <div className="p-3 block">
                     <ul>
                       <li>
                         <MenuItem menuName="Alumni" uri="/alumni" />
@@ -93,9 +83,9 @@ export const Header = () => {
                       </li>
                     </ul>
                   </div>
-                </HeadlessMenu.Items>
-              </Transition>
-            </HeadlessMenu>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4 items-center xl:hidden"></div>
         </nav>

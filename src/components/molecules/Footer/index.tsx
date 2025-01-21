@@ -171,7 +171,7 @@ export const Footer = () => {
               className="underline"
               rel="noreferrer"
             >
-              Campus Direct
+              Colombo International College
             </a>
           </p>
         </div>

@@ -241,3 +241,10 @@ html {
   outline: none;
   border-color: #065da8; /* Customize the focus border color if needed */
 }
+
+@layer utilities {
+  .dropdown:hover .dropdown-menu,
+  .dropdown-menu:hover {
+    display: block;
+  }
+}

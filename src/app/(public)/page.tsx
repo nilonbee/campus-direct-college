@@ -29,19 +29,20 @@ import React from "react";
 export const revalidate = 10;
 
 export const metadata = {
-  title: "Campus Direct | Your Trusted Education Partner",
+  title: "Colombo International College | Your Trusted Education Partner",
   description:
-    "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
-  keywords: "study abroad, education consultancy, campus direct",
+    "Colombo International College is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+  keywords:
+    "study abroad, education consultancy, Colombo International College",
   themeColor: "#065DA8",
   canonical: "https://www.campusdirect.io",
   url: "https://www.campusdirect.io",
   openGraph: {
-    title: "Campus Direct | Your Trusted Education Partner",
+    title: "Colombo International College | Your Trusted Education Partner",
     description:
-      "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+      "Colombo International College is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
     url: "https://www.campusdirect.io",
-    siteName: "Campus Direct",
+    siteName: "Colombo International College",
     images: [
       {
         url: "https://ik.imagekit.io/cdukstore/logo/Logo-Clr.png",
@@ -59,8 +60,8 @@ export const metadata = {
   },
   robots: "index, follow",
   viewport: "width=device-width, initial-scale=1.0",
-  author: "Campus Direct",
-  publisher: "Campus Direct",
+  author: "Colombo International College",
+  publisher: "Colombo International College",
   alternate: "https://www.campusdirect.io",
 };
 
@@ -97,13 +98,8 @@ export default async function Home() {
         {/* <CoursecsSection /> */}
         <SubjectSection />
       </ContainerLayout>
-      <div className="relative w-full bg-[#d4ebff]">
-        <ContainerLayout>
-          <UniversitySection />
-        </ContainerLayout>
-      </div>
       <ContainerLayout>
-        <StudentsSaysSection />
+        {/* <StudentsSaysSection /> */}
         <FAQSection />
         <ContactSection />
         <NewsLetterSection />
