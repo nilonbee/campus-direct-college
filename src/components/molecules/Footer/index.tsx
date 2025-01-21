@@ -53,7 +53,7 @@ export const Footer = () => {
           <div className="grid lg:grid-cols-4 md:grid-cols-2 xs:grid-cols-1 gap-4 pt-[120px] pb-8">
             <div className="">
               <Image
-                src="/images/Logo-Clr.jpg"
+                src="/images/footer.png"
                 alt="footer-icon"
                 className="object-contain w-[200px] h-[200px]"
                 width={500}

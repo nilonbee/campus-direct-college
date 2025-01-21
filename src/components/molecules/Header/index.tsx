@@ -7,6 +7,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { useUserStore } from "@/store";
 import { ProfileDrawer } from "..";
+import { Menu as HeadlessMenu, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,10 +24,10 @@ export const Header = () => {
           <div className="flex lg:flex-1">
             <Link href="/">
               <Image
-                className="h-16 w-auto"
-                src="/images/Logo-Clr.jpg"
-                alt="Campus Direct"
-                width={150}
+                className=""
+                src="/images/Logo-Clr.png"
+                alt="Colombo International College"
+                width={200}
                 height={50}
               />
             </Link>
@@ -48,78 +50,54 @@ export const Header = () => {
           <div className="hidden lg:flex gap-8">
             <MenuItem menuName="Home" uri={"/"} isHomePage />
             <MenuItem menuName="About Us" uri="/about" />
-            <MenuItem menuName="Courses" uri="/courses" />
-            <MenuItem menuName="Events" uri="/events" />
+            <MenuItem
+              menuName="Academic Programmes"
+              uri="/academic-programmes"
+            />
+            <MenuItem menuName="Admissions" uri="/admissions" />
+            <MenuItem menuName="Campus Life" uri="/campus-life" />
+            <MenuItem menuName="Research" uri="/research" />
+            <MenuItem menuName="Career Services" uri="/career-services" />
             <MenuItem menuName="Scholarships" uri="/scholarships" />
-            <MenuItem menuName="Careers" uri="/careers" />
-            {/* <MenuItem menuName="Blogs" uri="/blogs" /> */}
             <MenuItem menuName="Contact Us" uri="/contact" />
-          </div>
-          <div className="hidden xl:flex xl:flex-1 lg:justify-end gap-4 items-center">
-            {/*{authUser ? (*/}
-            {/*  <ProfileDrawer />*/}
-            {/*) : (*/}
-            {/*  <Link href="/login" className="text-sm text-primary">*/}
-            {/*    Sign in*/}
-            {/*  </Link>*/}
-            {/*)}*/}
-
-            {/*{!authUser && (*/}
-            {/*  <Link href="/register" className="text-sm text-primary">*/}
-            {/*    Register*/}
-            {/*  </Link>*/}
-            {/*)}*/}
-            <Link href="/courses">
-              <MainButton
-                label="Find My Course"
-                btnStyle="Primary"
-                btnSize="Medium"
-              />
-            </Link>
-          </div>
-
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4 items-center xl:hidden">
-            {/* {authUser && <ProfileDrawer />} */}
-            <Link href="/courses">
-              <MainButton
-                label="Find My Course"
-                btnStyle="Primary"
-                btnSize="Medium"
-              />
-            </Link>
-            {!authUser && (
-              <Menu as="div" className="relative inline-block text-left">
-                <div>
-                  <Menu.Button className="text-primary">
-                    <Bars3Icon className="h-8 w-8" aria-hidden="true" />
-                  </Menu.Button>
-                </div>
-                {/* <Menu.Items
-                  className="absolute right-0 z-10 w-48 mt-2 origin-top-right bg-white divide-y rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border-red
-            "
-                >
-                  <div className="px-1 py-1 ">
-                    <Menu.Item>
-                      <Link
-                        href="/login"
-                        className="block px-4 py-2 text-sm text-primary"
-                      >
-                        Sign in
-                      </Link>
-                    </Menu.Item>
-                    <Menu.Item>
-                      <Link
-                        href="/register"
-                        className="block px-4 py-2 text-sm text-primary"
-                      >
-                        Register
-                      </Link>
-                    </Menu.Item>
+            {/* Dropdown Menu for International Students, Alumni, Library */}
+            <HeadlessMenu as="div" className="relative">
+              <div>
+                <p className="text-sm text-textColor hover:text-primary">
+                  More
+                </p>
+              </div>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <HeadlessMenu.Items className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <div className="p-3 block ">
+                    <ul>
+                      <li>
+                        <MenuItem menuName="Alumni" uri="/alumni" />
+                      </li>
+                      <li>
+                        <MenuItem menuName="Library" uri="/library" />
+                      </li>
+                      <li>
+                        <MenuItem
+                          menuName="International Students"
+                          uri="/international-students"
+                        />
+                      </li>
+                    </ul>
                   </div>
-                </Menu.Items> */}
-              </Menu>
-            )}
+                </HeadlessMenu.Items>
+              </Transition>
+            </HeadlessMenu>
           </div>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4 items-center xl:hidden"></div>
         </nav>
       </ContainerLayout>
       <Dialog
@@ -164,23 +142,43 @@ export const Header = () => {
                   setMobileMenuOpen={() => setMobileMenuOpen(false)}
                 />
                 <MenuItem
-                  menuName="Courses"
-                  uri="/courses"
+                  menuName="Academic Programs"
+                  uri="/Academic-programs"
                   setMobileMenuOpen={() => setMobileMenuOpen(false)}
                 />
                 <MenuItem
-                  menuName="Events"
-                  uri="/events"
+                  menuName="Admissions"
+                  uri="/admissions"
                   setMobileMenuOpen={() => setMobileMenuOpen(false)}
                 />
                 <MenuItem
-                  menuName="Scholarships"
-                  uri="/scholarships"
+                  menuName="Campus Life"
+                  uri="/campus-life"
                   setMobileMenuOpen={() => setMobileMenuOpen(false)}
                 />
                 <MenuItem
-                  menuName="Careers"
-                  uri="/careers"
+                  menuName="Research"
+                  uri="/research"
+                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
+                />
+                <MenuItem
+                  menuName="Career Services"
+                  uri="/career-services"
+                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
+                />
+                <MenuItem
+                  menuName="International Students"
+                  uri="/international-students"
+                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
+                />
+                <MenuItem
+                  menuName="Alumni"
+                  uri="/alumni"
+                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
+                />
+                <MenuItem
+                  menuName="Library"
+                  uri="/library"
                   setMobileMenuOpen={() => setMobileMenuOpen(false)}
                 />
                 <MenuItem
@@ -188,33 +186,6 @@ export const Header = () => {
                   uri="/contact"
                   setMobileMenuOpen={() => setMobileMenuOpen(false)}
                 />
-              </div>
-              <div className="pt-6 flex flex-col space-y-5">
-                {/* {!authUser && (
-                  <Link
-                    href="/login"
-                    className="text-sm text-primary"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Sign in
-                  </Link>
-                )}
-                {!authUser && (
-                  <Link
-                    href="/register"
-                    className="text-sm text-primary"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Register
-                  </Link>
-                )} */}
-                <Link onClick={() => setMobileMenuOpen(false)} href="/courses">
-                  <div className="px-4 py-2 items-center relative h-18 bg-primary rounded shadow-md">
-                    <p className="text-base font-semibold text-white">
-                      Find My Course
-                    </p>
-                  </div>
-                </Link>
               </div>
             </div>
           </div>

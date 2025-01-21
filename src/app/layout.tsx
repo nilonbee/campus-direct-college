@@ -21,18 +21,19 @@ export const viewport: Viewport = {
 };
 
 export const metadata = {
-  title: "Campus Direct College | Your Trusted Education Partner",
+  title: "Colombo International College",
   description:
-    "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
-  keywords: "study abroad, education consultancy, campus direct",
+    "Colombo International College is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+  keywords:
+    "study abroad, education consultancy, Colombo International College",
   canonical: "https://www.campusdirect.io",
   url: "https://www.campusdirect.io",
   openGraph: {
-    title: "Campus Direct College | Your Trusted Education Partner",
+    title: "Colombo International College",
     description:
-      "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+      "Colombo International College is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
     url: "https://www.campusdirect.io",
-    siteName: "Campus Direct",
+    siteName: "Colombo International College",
     images: [
       {
         url: "https://ik.imagekit.io/cdukstore/logo/Logo-Clr.png",
@@ -49,8 +50,8 @@ export const metadata = {
     cardType: "summary_large_image",
   },
   robots: "index, follow",
-  author: "Campus Direct College",
-  publisher: "Campus Direct College",
+  author: "Colombo International College",
+  publisher: "Colombo International College",
   alternate: "https://www.campusdirect.io",
   viewport,
 };
@@ -63,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="shortcut icon" href="/images/fave.jpg" />
+        <link rel="shortcut icon" href="/images/fave.png" />
         {/* Hotjar Tracking Code */}
         <script
           dangerouslySetInnerHTML={{
@@ -100,7 +101,7 @@ export default function RootLayout({
               "position": "right"
             },
             "brandSetting": {
-              "brandName": "Campus Direct",
+              "brandName": "Colombo International College",
               "brandSubTitle": "Typically Within Seconds",
               "brandImg": "https://yenasyswebchat.blob.core.windows.net/webplugin/CDUKlogo.jpg",
               "welcomeText": "Hi there!\\nHow can I help you?",
