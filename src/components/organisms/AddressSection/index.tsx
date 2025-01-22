@@ -5,31 +5,31 @@ import { AddressBox } from "@/components/molecules";
 export const AddressSection = () => {
   const addressList = [
     {
-      branch: "Colombo Branch - Sri Lanka",
-      address:
-        "Campus Direct – Head Office, 36 B, Gower Street, Colombo 05, Sri Lanka",
-      phone: "+94 77 900 5555",
-      email: "info@cduk.lk",
+      branch: "Lorem Ipsum Branch 1",
+      address: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      phone: "+123 456 7890",
+      email: "example1@example.com",
     },
     {
-      branch: "Kandy Branch - Sri Lanka",
-      address: "749/B/1, William Gopallawa Mawatha Kandy",
-      phone: "+94 77 234 0055",
-      email: "info@cduk.lk",
+      branch: "Lorem Ipsum Branch 2",
+      address:
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      phone: "+123 456 7891",
+      email: "example2@example.com",
     },
     {
-      branch: "Dubai Branch – UAE",
+      branch: "Lorem Ipsum Branch 3",
       address:
-        "Office 1312, Victor Business Centre, Burjuman Business Tower, Dubai, United Arab Emirates",
-      phone: "+971 58 546 9555",
-      email: "info@cduk.lk",
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      phone: "+123 456 7892",
+      email: "example3@example.com",
     },
     {
-      branch: "London Branch – UK",
+      branch: "Lorem Ipsum Branch 4",
       address:
-        "71-75 Shelton Street Convent Garden London WC2H9JQ, United Kingdom",
-      phone: "+971 58 546 9555",
-      email: "london@cduk.lk",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+      phone: "+123 456 7893",
+      email: "example4@example.com",
     },
   ];
   return (

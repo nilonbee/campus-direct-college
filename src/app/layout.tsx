@@ -81,7 +81,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Whatsapp chat Widget */}
+        {/* Whatsapp chat Widget
         <Script id="whatsapp-chat-widget" strategy="lazyOnload">
           {`
           var url = '/ChatWidget.js';
@@ -119,7 +119,7 @@ export default function RootLayout({
           var x = document.getElementsByTagName('script')[0];
           x.parentNode.insertBefore(s, x);
         `}
-        </Script>
+        </Script> */}
 
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
@@ -146,9 +146,6 @@ export default function RootLayout({
           }}
         />
         {children}
-
-        {/* IAS Badge */}
-        <Script src="https://www-cdn.icef.com/scripts/iasbadgeid.js" />
       </body>
     </html>
   );

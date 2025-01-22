@@ -14,12 +14,12 @@ const SearchByName = ({ setSelectedType }: Props) => {
   const router = useRouter();
   const { setFilter, setRefetch } = useCourseFilterStore();
 
-  const handleSearch = async (e: any) => {
-    e.preventDefault();
-    setFilter({ course_name: searchValue });
-    router.push("/courses");
-    setRefetch(true);
-  };
+  // const handleSearch = async (e: any) => {
+  //   e.preventDefault();
+  //   setFilter({ course_name: searchValue });
+  //   router.push("/academic-programmes");
+  //   setRefetch(true);
+  // };
   return (
     <div className="flex gap-4 items-center w-full cursor-pointer ">
       <div>
@@ -27,17 +27,17 @@ const SearchByName = ({ setSelectedType }: Props) => {
           <SearchIcon />
         </div>
       </div>
-      <form className="w-full z-10" onSubmit={(e) => handleSearch(e)}>
+      <form className="w-full z-10">
         <input
           type="text"
           placeholder="Search Course"
           className=" w-full outline-none h-10 xs:text-sm sm:text-sm md:text-base text-textColor"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
+          // value={searchValue}
+          // onChange={(e) => setSearchValue(e.target.value)}
         />
       </form>
       <div
-        onClick={() => setSelectedType(null)}
+        // onClick={() => setSelectedType(null)}
         className="cursor-pointer z-10"
       >
         <VscClose className="xs:text-[25px] md:text-[30px] text-textColor/60" />

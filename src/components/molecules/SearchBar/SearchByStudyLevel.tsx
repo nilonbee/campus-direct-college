@@ -28,9 +28,9 @@ const SearchByStudyLevel = ({ setSelectedType, initCourseLevels }: Props) => {
         options={arrayFormatterForOptions(initCourseLevels, "level")}
         selectedOptions={filter.course_level_ids}
         setSelectedOptions={(selectedOptions) => {
-          setFilter({ course_level_ids: selectedOptions });
-          setRefetch(true);
-          router.push("/courses");
+          // setFilter({ course_level_ids: selectedOptions });
+          // setRefetch(true);
+          router.push("/academic-programmes");
         }}
         isFullWidth={true}
         isBordered={false}

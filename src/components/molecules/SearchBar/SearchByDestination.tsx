@@ -14,7 +14,7 @@ type Props = {
 
 const SearchByDestination = ({ setSelectedType, initCountries }: Props) => {
   const router = useRouter();
-  const { filter, setFilter, setRefetch } = useCourseFilterStore();
+  // const { filter, setFilter, setRefetch } = useCourseFilterStore();
 
   return (
     <div className="flex items-center w-full cursor-pointer ">
@@ -26,11 +26,11 @@ const SearchByDestination = ({ setSelectedType, initCountries }: Props) => {
       <MultiSelectDropdown
         formFieldName={"Select Destination"}
         options={arrayFormatterForOptions(initCountries, "name")}
-        selectedOptions={filter.country_ids}
+        selectedOptions={[]}
         setSelectedOptions={(selectedOptions) => {
-          setFilter({ country_ids: selectedOptions });
-          setRefetch(true);
-          router.push("/courses");
+          // setFilter({ country_ids: selectedOptions });
+          // setRefetch(true);
+          router.push("/academic-programmes");
         }}
         isFullWidth={true}
         isBordered={false}

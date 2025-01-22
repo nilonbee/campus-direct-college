@@ -61,7 +61,7 @@ export const SearchBar = ({
             <div
               key={type.id}
               className={`flex gap-4 items-center flex-1 relative w-full cursor-pointer`}
-              onClick={() => setSelectedType(type.name)}
+              // onClick={() => setSelectedType(type.name)}
             >
               <div className="xs:w-[25px] xs:h-[25px] sm:w-[30px] sm:h-[30px] md:w-[40px] md:h-[40px]  ">
                 {type.Icon}
