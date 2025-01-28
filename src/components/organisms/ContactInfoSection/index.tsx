@@ -15,18 +15,18 @@ export const ContactInfoSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <ContactBox
           label={"Location"}
-          value={countryData?.address || ""}
+          value="24/1 Dudley Senanayake Mawatha, Colombo 00800"
           icon={<CarbonLocationIcon />}
         />
         <ContactBox
           label={"Email Address"}
-          value={countryData?.email || ""}
+          value="info@cicedu.edu.lk"
           icon={<CarbonEmailIcon />}
           uri="mailto"
         />
         <ContactBox
           label={"Phone Number"}
-          value={countryData?.phoneNumber || ""}
+          value="0707855555"
           icon={<CarbonPhoneIcon />}
           uri="tel"
         />

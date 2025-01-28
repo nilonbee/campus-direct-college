@@ -36,7 +36,7 @@ const SearchByStudyLevel = ({ setSelectedType, initCourseLevels }: Props) => {
         isBordered={false}
       />
       <div
-        onClick={() => setSelectedType(null)}
+        // onClick={() => setSelectedType(null)}
         className="cursor-pointer z-10"
       >
         <VscClose className="xs:text-[25px] md:text-[30px] text-textColor/60" />

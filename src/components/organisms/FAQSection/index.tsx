@@ -21,35 +21,36 @@ export const FAQSection: React.FC = () => {
 
   const faqsList: FAQ[] = [
     {
-      question: "Why should I consider studying at Campus Direct College? ",
+      question:
+        "Why should I consider studying at Colombo International Campus? ",
       answer: [
-        "Campus Direct College offers a wide range of academic pathways, including Diplomas, Top-up degrees, and postgraduate programs. Our strong partnerships with international universities ensure students have opportunities to transfer abroad or complete their studies locally with globally recognized qualifications. We focus on both academic excellence and practical skills to prepare students for the evolving job market.",
+        "Colombo International Campus offers a wide range of academic pathways, including Diplomas, Top-up degrees, and postgraduate programs. Our strong partnerships with international universities ensure students have opportunities to transfer abroad or complete their studies locally with globally recognized qualifications. We focus on both academic excellence and practical skills to prepare students for the evolving job market.",
       ],
     },
     {
       question:
-        "Are there scholarship opportunities available at Campus Direct College? ",
+        "Are there scholarship opportunities available at Colombo International Campus? ",
       answer: [
-        "Yes, Campus Direct College offers various scholarship opportunities based on academic merit, extracurricular achievements, and financial need. We also assist students in applying for scholarships with our international university partners to help reduce the financial burden of higher education.",
+        "Yes, Colombo International Campus offers various scholarship opportunities based on academic merit, extracurricular achievements, and financial need. We also assist students in applying for scholarships with our international university partners to help reduce the financial burden of higher education.",
       ],
     },
     {
       question:
-        "Is Campus Direct College affiliated with Campus Direct Placement Consultancy?",
+        "Is Colombo International Campus affiliated with Campus Direct Placement Consultancy?",
       answer: [
-        "Yes, Campus Direct College is part of the broader Campus Direct network. While Campus Direct operates as a placement consultancy assisting students in finding opportunities abroad, Campus Direct College focuses on providing high-quality higher education locally and helping students continue their education internationally through our global partnerships.",
+        "Yes, Colombo International Campus is part of the broader Campus Direct network. While Campus Direct operates as a placement consultancy assisting students in finding opportunities abroad, Colombo International Campus focuses on providing high-quality higher education locally and helping students continue their education internationally through our global partnerships.",
       ],
     },
     {
       question:
-        "What are the minimum entry requirements for programs at Campus Direct College?",
+        "What are the minimum entry requirements for programs at Colombo International Campus?",
       answer: [
         "The minimum entry requirements vary depending on the program. For undergraduate diplomas and degrees, students typically need a minimum of 5 O/Ls including Mathematics and English, and 2-3 A/L passes. For postgraduate programs, a recognized bachelor's degree or equivalent qualifications are required. We recommend contacting our admissions team for specific entry criteria for your chosen program.",
       ],
     },
     {
       question:
-        "Does Campus Direct College assist with internship placements for students? ",
+        "Does Colombo International Campus assist with internship placements for students? ",
       answer: [
         "Yes, we provide support in finding internship placements for our students through our industry partnerships. Internships are an integral part of our programs, allowing students to gain practical experience and improve their employability. Our dedicated career services team will guide you throughout the process of securing a relevant internship.",
       ],

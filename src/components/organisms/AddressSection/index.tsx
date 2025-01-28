@@ -5,31 +5,10 @@ import { AddressBox } from "@/components/molecules";
 export const AddressSection = () => {
   const addressList = [
     {
-      branch: "Lorem Ipsum Branch 1",
-      address: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      phone: "+123 456 7890",
-      email: "example1@example.com",
-    },
-    {
-      branch: "Lorem Ipsum Branch 2",
-      address:
-        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      phone: "+123 456 7891",
-      email: "example2@example.com",
-    },
-    {
-      branch: "Lorem Ipsum Branch 3",
-      address:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-      phone: "+123 456 7892",
-      email: "example3@example.com",
-    },
-    {
-      branch: "Lorem Ipsum Branch 4",
-      address:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
-      phone: "+123 456 7893",
-      email: "example4@example.com",
+      branch: "Colombo Branch",
+      address: "24/1 Dudley Senanayake Mawatha, Colombo 08",
+      phone: "0707855555",
+      email: "info@cicedu.edu.lk",
     },
   ];
   return (

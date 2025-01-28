@@ -1,30 +1,57 @@
 "use client";
-import Link from "next/link";
-import { ContainerLayout, MainButton, MenuItem } from "@/components/atoms";
-import { Dialog, Menu } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import Link from "next/link";
 import Image from "next/image";
-import { useUserStore } from "@/store";
-import { ProfileDrawer } from "..";
-import { Menu as HeadlessMenu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ChevronDownIcon,
+} from "@heroicons/react/24/outline";
+import {
+  Menu,
+  MenuButton,
+  MenuItems,
+  MenuItem as HeadlessMenuItem,
+} from "@headlessui/react";
+import { ContainerLayout, MenuItem } from "@components/atoms";
+
+const menu_items = [
+  { name: "Admissions", href: "/admissions" },
+  { name: "Campus Life", href: "/campus-life" },
+  { name: "Career Services", href: "/career-services" },
+  { name: "International Students", href: "/international-students" },
+  { name: "Alumni", href: "/alumni" },
+  { name: "Library", href: "/library" },
+];
+
+const mobile_menu_items = [
+  { menuName: "Home", uri: "/", isHomePage: true },
+  { menuName: "About Us", uri: "/about" },
+  { menuName: "Academic Programmes", uri: "/programmes" },
+  { menuName: "Admissions", uri: "/admissions" },
+  { menuName: "Campus Life", uri: "/campus-life" },
+  { menuName: "Research", uri: "/research" },
+  { menuName: "Career Services", uri: "/career-services" },
+  { menuName: "International Students", uri: "/international-students" },
+  { menuName: "Alumni", uri: "/alumni" },
+  { menuName: "Library", uri: "/library" },
+  { menuName: "Contact Us", uri: "/contact" },
+];
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { authUser } = useUserStore();
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-20">
       <ContainerLayout>
         <nav
-          className="mx-auto flex w-full justify-between items-center  py-3"
+          className="mx-auto flex w-full justify-between items-center py-3"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
             <Link href="/">
               <Image
-                className=""
                 src="/images/Logo-Clr.png"
                 alt="Colombo International College"
                 width={200}
@@ -32,8 +59,8 @@ export const Header = () => {
               />
             </Link>
           </div>
+
           <div className="flex lg:hidden gap-4">
-            {/* {authUser && <ProfileDrawer />} */}
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-textColor"
@@ -47,70 +74,107 @@ export const Header = () => {
               )}
             </button>
           </div>
-          <div className="hidden lg:flex gap-8">
-            <MenuItem menuName="Home" uri={"/"} isHomePage />
+
+          <div className="hidden lg:flex space-x-12 items-center">
+            <MenuItem menuName="Home" uri="/" isHomePage />
             <MenuItem menuName="About Us" uri="/about" />
-            <MenuItem
-              menuName="Academic Programmes"
-              uri="/academic-programmes"
-            />
-            <MenuItem menuName="Admissions" uri="/admissions" />
-            <MenuItem menuName="Campus Life" uri="/campus-life" />
-            <MenuItem menuName="Research" uri="/research" />
-            <MenuItem menuName="Career Services" uri="/career-services" />
-            <MenuItem menuName="Scholarships" uri="/scholarships" />
-            <MenuItem menuName="Contact Us" uri="/contact" />
-            {/* Dropdown Menu for International Students, Alumni, Library */}
-            <div className="relative">
-              <div className="dropdown">
-                <p className="text-sm text-textColor hover:text-primary cursor-pointer">
-                  More
-                </p>
-                <div className="hidden absolute right-0 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 dropdown-menu">
-                  <div className="p-3 block">
-                    <ul>
-                      <li>
-                        <MenuItem menuName="Alumni" uri="/alumni" />
-                      </li>
-                      <li>
-                        <MenuItem menuName="Library" uri="/library" />
-                      </li>
-                      <li>
-                        <MenuItem
-                          menuName="International Students"
-                          uri="/international-students"
-                        />
-                      </li>
-                    </ul>
-                  </div>
+
+            <Menu as="div" className="relative">
+              <MenuButton className="inline-flex items-center gap-2 text-sm text-textColor hover:text-primary bg-transparent py-2 rounded-md focus:outline-none">
+                Students
+                <ChevronDownIcon className="w-3" />
+              </MenuButton>
+              <MenuItems className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-10">
+                {menu_items.map((item) => (
+                  <HeadlessMenuItem key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="block px-4 py-2 text-sm text-textColor hover:bg-lightBlue/10"
+                    >
+                      {item.name}
+                    </Link>
+                  </HeadlessMenuItem>
+                ))}
+              </MenuItems>
+            </Menu>
+
+            <Menu as="div" className="relative">
+              <MenuButton className="inline-flex items-center gap-2 text-sm text-textColor hover:text-primary bg-transparent py-2 rounded-md focus:outline-none">
+                Programmes
+                <ChevronDownIcon className="w-3" />
+              </MenuButton>
+              <MenuItems className="absolute left-0 mt-2 w-60 bg-white rounded-lg shadow-lg z-10">
+                <div>
+                  <h3 className="px-4 py-2 font-semibold text-sm">
+                    Faculty of Computing
+                  </h3>
+                  <HeadlessMenuItem>
+                    <Link
+                      href="/undergraduate-computing"
+                      className="block px-4 py-2 text-sm text-textColor hover:bg-lightBlue/10"
+                    >
+                      Undergraduate Programs
+                    </Link>
+                  </HeadlessMenuItem>
+                  <HeadlessMenuItem>
+                    <Link
+                      href="/postgraduate-computing"
+                      className="block px-4 py-2 text-sm text-textColor hover:bg-lightBlue/10"
+                    >
+                      Postgraduate Programs
+                    </Link>
+                  </HeadlessMenuItem>
                 </div>
-              </div>
-            </div>
+                <div>
+                  <h3 className="px-4 py-2 font-semibold text-sm">
+                    Faculty of Business
+                  </h3>
+                  <HeadlessMenuItem>
+                    <Link
+                      href="/undergraduate-business"
+                      className="block px-4 py-2 text-sm text-textColor hover:bg-lightBlue/10"
+                    >
+                      Undergraduate Programs
+                    </Link>
+                  </HeadlessMenuItem>
+                  <HeadlessMenuItem>
+                    <Link
+                      href="/postgraduate-business"
+                      className="block px-4 py-2 text-sm text-textColor hover:bg-lightBlue/10"
+                    >
+                      Postgraduate Programs
+                    </Link>
+                  </HeadlessMenuItem>
+                </div>
+              </MenuItems>
+            </Menu>
+
+            <MenuItem menuName="Contact Us" uri="/contact" />
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4 items-center xl:hidden"></div>
         </nav>
       </ContainerLayout>
+
       <Dialog
         className="lg:hidden"
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10 w-full" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10  w-full bg-white px-4 py-4 ">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full bg-white px-4 py-4">
           <div className="flex items-center justify-between w-full">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <Image
                 className="h-14 w-auto"
                 src="/images/Logo-Clr.png"
-                alt=""
+                alt="Logo"
                 width={150}
                 height={50}
               />
-            </a>
+            </Link>
             <button
               type="button"
-              className=" rounded-md p-2.5 text-gray-700"
+              className="rounded-md p-2.5 text-textColor"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
@@ -118,66 +182,18 @@ export const Header = () => {
             </button>
           </div>
           <div className="mt-5 flow-root">
-            <div>
-              <div className="space-y-5 py-6 flex flex-col border-b border-borderGray">
+            <div className="space-y-5 py-6 flex flex-col border-b border-gray-200">
+              {mobile_menu_items.map((item) => (
                 <MenuItem
-                  menuName="Home"
-                  uri={"/"}
+                  key={item.uri}
+                  menuName={item.menuName}
+                  uri={item.uri}
                   setMobileMenuOpen={() => setMobileMenuOpen(false)}
-                  isHomePage
+                  {...(item.isHomePage && { isHomePage: true })}
                 />
-                <MenuItem
-                  menuName="About Us"
-                  uri="/about"
-                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
-                />
-                <MenuItem
-                  menuName="Academic Programs"
-                  uri="/Academic-programs"
-                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
-                />
-                <MenuItem
-                  menuName="Admissions"
-                  uri="/admissions"
-                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
-                />
-                <MenuItem
-                  menuName="Campus Life"
-                  uri="/campus-life"
-                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
-                />
-                <MenuItem
-                  menuName="Research"
-                  uri="/research"
-                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
-                />
-                <MenuItem
-                  menuName="Career Services"
-                  uri="/career-services"
-                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
-                />
-                <MenuItem
-                  menuName="International Students"
-                  uri="/international-students"
-                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
-                />
-                <MenuItem
-                  menuName="Alumni"
-                  uri="/alumni"
-                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
-                />
-                <MenuItem
-                  menuName="Library"
-                  uri="/library"
-                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
-                />
-                <MenuItem
-                  menuName="Contact Us"
-                  uri="/contact"
-                  setMobileMenuOpen={() => setMobileMenuOpen(false)}
-                />
-              </div>
+              ))}
             </div>
+            ;
           </div>
         </Dialog.Panel>
       </Dialog>

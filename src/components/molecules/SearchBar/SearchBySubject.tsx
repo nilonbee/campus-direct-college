@@ -28,9 +28,9 @@ const SearchBySubject = ({ setSelectedType, initSubjects }: Props) => {
         options={arrayFormatterForOptions(initSubjects, "name")}
         selectedOptions={filter.subject_ids}
         setSelectedOptions={(selectedOptions) => {
-          setFilter({ subject_ids: selectedOptions });
-          setRefetch(true);
-          router.push("/courses");
+          // setFilter({ subject_ids: selectedOptions });
+          // setRefetch(true);
+          router.push("/academic-programmes");
         }}
         isFullWidth={true}
         isBordered={false}

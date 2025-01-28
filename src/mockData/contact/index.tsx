@@ -1,10 +1,9 @@
 import { BsClock } from "react-icons/bs";
 
 export const contactInfo = {
-  phoneNumber: "+94 77 900 5555",
-  email: "info@cduk.lk",
-  address:
-    "Campus Direct – Head Office, 36 B, Gower Street, Colombo 05, Sri Lanka",
+  phoneNumber: "0707855555",
+  email: "info@cicedu.edu.lk",
+  address: "24/1 Dudley Senanayake Mawatha, Colombo 08",
   openingTimes: [
     {
       branch: "Colombo Branch",
