@@ -11,7 +11,6 @@ export const SubjectSection = async () => {
     status: 1,
   };
   // const subjects = await getSubjects(filterData);
-  console.log(subjects, "subjects");
   return (
     <InnerContainer>
       <div className="mt-20 mb-20">
@@ -27,14 +26,14 @@ export const SubjectSection = async () => {
                   title={item.title}
                   key={index}
                   img={item.image}
-                  id={item.id}
+                  // id={item.id}
                 />
               ))}
             </GridWrapper>
           </div>
           {/* See More Butn */}
           <div className="flex justify-center items-center mt-10">
-            <Link href="/courses">
+            <Link href="/programmes">
               <MainButton
                 label="See More"
                 btnStyle="Secondary"

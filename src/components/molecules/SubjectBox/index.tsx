@@ -6,12 +6,12 @@ import React from "react";
 interface Props {
   title: string;
   img: string;
-  id: number;
+  // id: number;
 }
 
-export const SubjectBox = ({ img, title, id }: Props) => {
+export const SubjectBox = ({ img, title }: Props) => {
   const router = useRouter();
-  const { setRefetch, setFilter } = useCourseFilterStore();
+  // const { setRefetch, setFilter } = useCourseFilterStore();
   return (
     <div
       className="relative h-[200px] overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-md"
@@ -21,9 +21,9 @@ export const SubjectBox = ({ img, title, id }: Props) => {
         backgroundPosition: "center",
       }}
       onClick={() => {
-        router.push(`/courses`);
-        setFilter({ subject_ids: [id] });
-        setRefetch(true);
+        router.push(`/pathway`);
+        // setFilter({ subject_ids: [id] });
+        // setRefetch(true);
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50">

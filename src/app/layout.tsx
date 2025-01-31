@@ -21,19 +21,18 @@ export const viewport: Viewport = {
 };
 
 export const metadata = {
-  title: "Colombo International College",
+  title: "Colombo International Campus",
   description:
-    "Colombo International College is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
-  keywords:
-    "study abroad, education consultancy, Colombo International College",
+    "Colombo International Campus is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+  keywords: "study abroad, education consultancy, Colombo International Campus",
   canonical: "https://www.campusdirect.io",
   url: "https://www.campusdirect.io",
   openGraph: {
-    title: "Colombo International College",
+    title: "Colombo International Campus",
     description:
-      "Colombo International College is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+      "Colombo International Campus is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
     url: "https://www.campusdirect.io",
-    siteName: "Colombo International College",
+    siteName: "Colombo International Campus",
     images: [
       {
         url: "https://ik.imagekit.io/cdukstore/logo/Logo-Clr.png",
@@ -50,8 +49,8 @@ export const metadata = {
     cardType: "summary_large_image",
   },
   robots: "index, follow",
-  author: "Colombo International College",
-  publisher: "Colombo International College",
+  author: "Colombo International Campus",
+  publisher: "Colombo International Campus",
   alternate: "https://www.campusdirect.io",
   viewport,
 };
@@ -101,7 +100,7 @@ export default function RootLayout({
               "position": "right"
             },
             "brandSetting": {
-              "brandName": "Colombo International College",
+              "brandName": "Colombo International Campus",
               "brandSubTitle": "Typically Within Seconds",
               "brandImg": "https://yenasyswebchat.blob.core.windows.net/webplugin/CDUKlogo.jpg",
               "welcomeText": "Hi there!\\nHow can I help you?",

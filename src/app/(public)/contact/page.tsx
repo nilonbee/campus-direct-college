@@ -12,7 +12,7 @@ import {
 } from "@/components/organisms";
 
 export const metadata = {
-  title: "Contact Us - Colombo International College",
+  title: "Contact Us - Colombo International Campus",
   description:
     "Campus Direct is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
   keywords: "study abroad, education consultancy, campus direct",
@@ -35,11 +35,6 @@ const ContactPage = () => {
           <ContactInfoSection />
         </InnerContainer>
         <ContactSection />
-        <InnerContainer>
-          <div className="w-full mt-10 lg:px-20 md:px-0 mb-10">
-            <AddressSection />
-          </div>
-        </InnerContainer>
       </ContainerLayout>
     </>
   );

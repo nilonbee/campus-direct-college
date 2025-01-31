@@ -19,7 +19,7 @@ export const BannerCarousel = () => {
   return (
     <div className="slider-container w-full">
       <Slider {...settings} className="w-full object-cover overflow-hidden">
-        <div>
+        {/* <div>
           <img
             src={rootImagePath(
               "campus-direct-college/banner-images/banner-1?tr=w-1800",
@@ -27,7 +27,7 @@ export const BannerCarousel = () => {
             alt="banner1"
             className="w-full"
           />
-        </div>
+        </div> */}
         <div>
           <img
             src={rootImagePath(

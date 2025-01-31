@@ -6,26 +6,26 @@ export const CountrySection = () => {
     {
       name: "UK",
       img: "campus-direct-college/country-images/UK.png",
-      url: "/courses",
-      country_id: 230,
+      url: "/pathway",
+      // country_id: 230,
     },
     {
       name: "Australia",
       img: "campus-direct-college/country-images/Australia.png",
-      url: "/courses",
-      country_id: 13,
+      url: "/pathway",
+      // country_id: 13,
     },
     {
       name: "Canada",
       img: "campus-direct-college/country-images/Canada.png",
-      url: "/courses",
-      country_id: 38,
+      url: "/pathway",
+      // country_id: 38,
     },
     {
-      name: "Sri Lanka",
+      name: "New Zealand",
       img: "campus-direct-college/country-images/New-Zealand.png",
-      url: "/courses",
-      country_id: 157,
+      url: "/pathway",
+      // country_id: 157,
     },
   ];
 
@@ -44,7 +44,7 @@ export const CountrySection = () => {
                 key={index}
                 country={country.name}
                 img={country.img}
-                countryId={country.country_id}
+                // countryId={country.country_id}
               />
             ))}
           </GridWrapperTwo>

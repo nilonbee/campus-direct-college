@@ -29,20 +29,19 @@ import React from "react";
 export const revalidate = 10;
 
 export const metadata = {
-  title: "Colombo International College | Your Trusted Education Partner",
+  title: "Colombo International Campus | Your Trusted Education Partner",
   description:
-    "Colombo International College is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
-  keywords:
-    "study abroad, education consultancy, Colombo International College",
+    "Colombo International Campus is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+  keywords: "study abroad, education consultancy, Colombo International Campus",
   themeColor: "#065DA8",
   canonical: "https://www.campusdirect.io",
   url: "https://www.campusdirect.io",
   openGraph: {
-    title: "Colombo International College | Your Trusted Education Partner",
+    title: "Colombo International Campus | Your Trusted Education Partner",
     description:
-      "Colombo International College is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
+      "Colombo International Campus is a leading education consultancy in Sri Lanka, providing expert advice and guidance to students who wish to study abroad.",
     url: "https://www.campusdirect.io",
-    siteName: "Colombo International College",
+    siteName: "Colombo International Campus",
     images: [
       {
         url: "https://ik.imagekit.io/cdukstore/logo/Logo-Clr.png",
@@ -60,8 +59,8 @@ export const metadata = {
   },
   robots: "index, follow",
   viewport: "width=device-width, initial-scale=1.0",
-  author: "Colombo International College",
-  publisher: "Colombo International College",
+  author: "Colombo International Campus",
+  publisher: "Colombo International Campus",
   alternate: "https://www.campusdirect.io",
 };
 

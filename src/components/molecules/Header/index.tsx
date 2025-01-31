@@ -53,7 +53,7 @@ export const Header = () => {
             <Link href="/">
               <Image
                 src="/images/Logo-Clr.png"
-                alt="Colombo International College"
+                alt="Colombo International Campus"
                 width={200}
                 height={50}
               />
